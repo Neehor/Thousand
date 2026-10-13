@@ -1,9 +1,13 @@
-import {ReactNode} from "react";
+import type {PropsWithChildren} from "react";
+import {PlayersDataStore} from "./components/PlayersDataStore";
+import {StageDataStore} from "./components/StageDataStore";
 
-export function InitialGameStore({children}: {children: ReactNode}) {
+export function InitialGameStore({children}: PropsWithChildren) {
     return (
-        <>
-            {children}
-        </>
+        <PlayersDataStore>
+            <StageDataStore>
+                {children}
+            </StageDataStore>
+        </PlayersDataStore>
     )
 }

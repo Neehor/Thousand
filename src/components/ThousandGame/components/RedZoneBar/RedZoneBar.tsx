@@ -1,7 +1,7 @@
 export function RedZoneBar(){
     return (
         <div>
-            RedZoneBar
+            Влюбляюсь в тебя каждую секунду проведённую вместе всё больше
         </div>
     )
 }

@@ -1,7 +1,7 @@
 export function ActionBar() {
     return (
         <div>
-            ActionBar
+            Буду любить солнышко всегда
         </div>
     )
 }

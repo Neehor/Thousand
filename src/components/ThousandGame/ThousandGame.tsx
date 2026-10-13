@@ -6,7 +6,7 @@ import {PlayerPanel} from "./components/PlayerPanel";
 import {InitialGameStore} from "./components/InitialGameStore";
 
 
-export default function ThousandGame() {
+export function ThousandGame() {
     return (
         <InitialGameStore>
             <PlayerPanel />
