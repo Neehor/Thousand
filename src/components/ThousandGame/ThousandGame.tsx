@@ -6,7 +6,6 @@ import {PlayerPanel} from "./components/PlayerPanel";
 import {InitialGameStore} from "./components/InitialGameStore";
 import {CheckValues} from "./components/CheckValues";
 
-
 export function ThousandGame() {
     return (
         <InitialGameStore>

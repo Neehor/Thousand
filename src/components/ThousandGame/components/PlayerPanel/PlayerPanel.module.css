@@ -1,0 +1,4 @@
+.playerPanel {
+    display: flex;
+    gap: 4rem;
+}

@@ -13,7 +13,7 @@ export type PlayerDataType = {
 
 export type contextPlayerDataType = {
     playersDataState: PlayersDataStateType,
-    setPlayersDataState: (activePlayerState: Partial<PlayerDataType> | undefined,
-                          inActivePlayerState: Partial<PlayerDataType> | undefined,
-                          setActivePlayer: boolean | undefined) => void
+    setPlayersDataState: (activePlayerState?: Partial<PlayerDataType>,
+                          inActivePlayerState?: Partial<PlayerDataType>,
+                          setActivePlayer?: boolean | undefined) => void
 }

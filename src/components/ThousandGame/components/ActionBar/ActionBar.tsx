@@ -1,16 +1,15 @@
-import {useContext} from "react";
-import {StageDataStateContext} from "../InitialGameStore/components/StageDataStore/StageDataStore.tsx";
-import {PlayersDataStateContext} from "../InitialGameStore/components/PlayersDataStore/PlayersDataStore.tsx";
 import {ThrowDice} from "./components/ThrowDice";
 import {StagePoints} from "./components/StagePoints";
 import {SaveScoreVM} from "./components/SaveScoreVM";
 import {PassTheTurn} from "./components/PassTheTurn";
 import {Rematch} from "./components/Rematch";
+import {usePlayersDataStateContext} from "../InitialGameStore/components/PlayersDataStore";
+import {useStageDataStateContext} from "../InitialGameStore/components/StageDataStore";
 
 export function ActionBar() {
 
-    const stageDataState = useContext(StageDataStateContext);
-    const playersDataState = useContext(PlayersDataStateContext);
+    const stageDataState = useStageDataStateContext();
+    const playersDataState = usePlayersDataStateContext();
 
     // const actionBarContent = () => {
     //     switch (stageDataState.stageDataState.stageState) {

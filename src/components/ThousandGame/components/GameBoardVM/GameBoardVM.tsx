@@ -1,8 +1,7 @@
-import {useContext} from "react";
-import {StageDataStateContext} from "../InitialGameStore/components/StageDataStore/StageDataStore.tsx";
+import {useStageDataStateContext} from "../InitialGameStore/components/StageDataStore";
 
 export function GameBoardVM() {
-    const checkContextStage = useContext(StageDataStateContext)
+    const checkContextStage = useStageDataStateContext();
 
     //Todo: Change to component function
     //     newState.firstPlayer = {...initPlayersDataState.firstPlayer, name: prevState.firstPlayer.name}

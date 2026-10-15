@@ -1,8 +1,8 @@
 import {createContext, type PropsWithChildren, useState} from "react";
 import type {contextPlayerDataType, PlayersDataStateType, PlayerDataType} from "./types.ts";
 
-
-export const PlayersDataStateContext = createContext<contextPlayerDataType | null>(null)
+/* init players context*/
+export const PlayersDataStateContext = createContext<contextPlayerDataType | null>(null);
 const initPlayersDataState: PlayersDataStateType = {
     firstPlayer: {name: "player1", score: 0, boundaryPoints: 65, countRedZone: 0},
     secondPlayer: {name: "player2", score: 0, boundaryPoints: 65, countRedZone: 0},

@@ -1,11 +1,10 @@
-import {useContext} from "react";
-import {StageDataStateContext} from "../InitialGameStore/components/StageDataStore/StageDataStore.tsx";
-import {PlayersDataStateContext} from "../InitialGameStore/components/PlayersDataStore/PlayersDataStore.tsx";
+import {usePlayersDataStateContext} from "../InitialGameStore/components/PlayersDataStore";
+import {useStageDataStateContext} from "../InitialGameStore/components/StageDataStore";
 
 export function CheckValues() {
+    const checkContextStage = useStageDataStateContext();
+    const checkContextPlayer = usePlayersDataStateContext();
 
-    const checkContextStage = useContext(StageDataStateContext)
-    const checkContextPlayer = useContext(PlayersDataStateContext)
 
     return (
         <div style={{ display: "flex"}}>

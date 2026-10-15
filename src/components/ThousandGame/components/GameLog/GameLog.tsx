@@ -1,12 +1,12 @@
-import {useContext, useEffect, useState} from "react";
-import {PlayersDataStateContext} from "../InitialGameStore/components/PlayersDataStore/PlayersDataStore.tsx";
+import {useEffect, useState} from "react";
 import type {PlayersDataStateType} from "../InitialGameStore/components/PlayersDataStore/types.ts";
+import {usePlayersDataStateContext} from "../InitialGameStore/components/PlayersDataStore";
 
 const gameLogs = []
 
 export function GameLog() {
 
-    const checkContextPlayer = useContext(PlayersDataStateContext)
+    const checkContextPlayer = usePlayersDataStateContext()
 
 
     const [lastTurnInfo, setLastTurnInfo] = useState<PlayersDataStateType>(checkContextPlayer.playersDataState)
