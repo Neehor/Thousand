@@ -10,40 +10,22 @@ import styles from "./ActionBar.module.css";
 export function ActionBar() {
     const stageDataState = useStageDataStateContext();
     const playersDataState = usePlayersDataStateContext();
-console.log('stageDataState',stageDataState)
-    // const actionBarContent = () => {
-    //     switch (stageDataState.stageDataState.stageState) {
-    //         case "start":
-    //             return (
-    //                 <ThrowDice/>
-    //             )
-    //         case "inGame":
-    //             return (<>
-    //                     <ThrowDice/>
-    //                     <StagePoints/>
-    //                     <SaveScore/>
-    //                 </>
-    //             )
-    //         case "pass":
-    //             return (
-    //                 <PassTheTurn/>
-    //             )
-    //         case "win":
-    //             return (
-    //                 <Rematch/>
-    //             )
-    //     }
-    // }
+    console.log('stageDataState', stageDataState);
+
     return (
         <div className={styles.container}>
             {(() => {
                 switch (stageDataState.stageDataState.stageState) {
                     case "start":
                         return (
-                            <ThrowDice stageDataState={stageDataState} playersDataState={playersDataState}/>
+                            <ThrowDice
+                                stageDataState={stageDataState}
+                                playersDataState={playersDataState}
+                            />
                         )
                     case "inGame":
-                        return (<>
+                        return (
+                            <>
                                 <ThrowDice
                                     stageDataState={stageDataState}
                                     playersDataState={playersDataState}
@@ -58,11 +40,17 @@ console.log('stageDataState',stageDataState)
                         )
                     case "pass":
                         return (
-                            <PassTheTurn setStageDataState={stageDataState.setStageDataState} playersDataState={playersDataState}/>
+                            <PassTheTurn
+                                setStageDataState={stageDataState.setStageDataState}
+                                contextPlayerData={playersDataState}
+                            />
                         )
                     case "win":
                         return (
-                            <Rematch setStageDataState={stageDataState.setStageDataState} playersDataState={playersDataState}/>
+                            <Rematch
+                                setStageDataState={stageDataState.setStageDataState}
+                                playersDataState={playersDataState}
+                            />
                         )
                 }
             })()}

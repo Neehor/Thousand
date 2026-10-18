@@ -2,7 +2,7 @@ import {createContext, type PropsWithChildren, useState} from "react";
 import type {contextStageDataType, StageDataStateType} from "./types.ts";
 
 export const StageDataStateContext = createContext<contextStageDataType | null>(null)
-const initStageDataState: StageDataStateType = {
+export const initStageDataState: StageDataStateType = {
     droppedDice:[],
     gameCombination:[],
     availableDice:5,
