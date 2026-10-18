@@ -5,12 +5,13 @@ import {PassTheTurn} from "./components/PassTheTurn";
 import {Rematch} from "./components/Rematch";
 import {usePlayersDataStateContext} from "../InitialGameStore/components/PlayersDataStore";
 import {useStageDataStateContext} from "../InitialGameStore/components/StageDataStore";
+import styles from "./ActionBar.module.css";
 
 export function ActionBar() {
 
     const stageDataState = useStageDataStateContext();
     const playersDataState = usePlayersDataStateContext();
-
+console.log('stageDataState',stageDataState)
     // const actionBarContent = () => {
     //     switch (stageDataState.stageDataState.stageState) {
     //         case "start":
@@ -35,7 +36,7 @@ export function ActionBar() {
     //     }
     // }
     return (
-        <div>
+        <div className={styles.container}>
             {(() => {
                 switch (stageDataState.stageDataState.stageState) {
                     case "start":
@@ -44,9 +45,16 @@ export function ActionBar() {
                         )
                     case "inGame":
                         return (<>
-                                <ThrowDice stageDataState={stageDataState} playersDataState={playersDataState}/>
+                                <ThrowDice
+                                    stageDataState={stageDataState}
+                                    playersDataState={playersDataState}
+                                />
                                 <StagePoints points={stageDataState.stageDataState.stagePoints}/>
-                                <SaveScoreVM points={stageDataState.stageDataState.stagePoints} setStageDataState={stageDataState.setStageDataState} playersDataState={playersDataState}/>
+                                <SaveScoreVM
+                                    points={stageDataState.stageDataState.stagePoints}
+                                    setStageDataState={stageDataState.setStageDataState}
+                                    playersDataState={playersDataState}
+                                />
                             </>
                         )
                     case "pass":
