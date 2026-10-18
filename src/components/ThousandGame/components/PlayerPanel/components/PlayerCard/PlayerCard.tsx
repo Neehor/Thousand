@@ -1,10 +1,10 @@
 import {useState} from "react";
 import styles from "./PlayerCard.module.css";
-import type {PlayerDataType} from "../../../InitialGameStore/components/PlayersDataStore/types";
+import type {Player} from "../../../InitialGameStore/components/PlayersDataStore/types";
 import type {contextPlayerDataType} from "../../../InitialGameStore/components/PlayersDataStore/types";
 
 type PlayerCardPropsType = {
-    player: PlayerDataType;
+    player: Player;
     isActive: boolean;
     setPlayersDataState: contextPlayerDataType["setPlayersDataState"];
 }

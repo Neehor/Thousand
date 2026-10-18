@@ -1,5 +1,5 @@
 import {createContext, type PropsWithChildren, useState} from "react";
-import type {contextPlayerDataType, PlayersDataStateType, PlayerDataType} from "./types.ts";
+import type {contextPlayerDataType, PlayersDataStateType, Player} from "./types.ts";
 
 /* init players context*/
 export const PlayersDataStateContext = createContext<contextPlayerDataType | null>(null);
@@ -12,8 +12,8 @@ const initPlayersDataState: PlayersDataStateType = {
 export function PlayersDataStore({children}: PropsWithChildren) {
     const [playersDataState, setPlayersDataState] = useState(initPlayersDataState)
 
-    function handlePlayersDataState(activePlayerState?: Partial<PlayerDataType> | undefined,
-                                    inActivePlayerState?: Partial<PlayerDataType> | undefined ,
+    function handlePlayersDataState(activePlayerState?: Partial<Player> | undefined,
+                                    inActivePlayerState?: Partial<Player> | undefined ,
                                     setActivePlayer?: boolean | undefined ) {
         setPlayersDataState((prevState) => {
             const newState = {...prevState}

@@ -1,10 +1,10 @@
 
 export type PlayersDataStateType = {
-    firstPlayer:PlayerDataType,
-    secondPlayer:PlayerDataType,
+    firstPlayer:Player,
+    secondPlayer:Player,
     activePlayer:"firstPlayer"|"secondPlayer"}
 
-export type PlayerDataType = {
+export type Player = {
     name:string,
     score:number,
     boundaryPoints:number,
@@ -13,7 +13,7 @@ export type PlayerDataType = {
 
 export type contextPlayerDataType = {
     playersDataState: PlayersDataStateType,
-    setPlayersDataState: (activePlayerState?: Partial<PlayerDataType>,
-                          inActivePlayerState?: Partial<PlayerDataType>,
+    setPlayersDataState: (activePlayerState?: Partial<Player>,
+                          inActivePlayerState?: Partial<Player>,
                           setActivePlayer?: boolean | undefined) => void
 }

@@ -1,6 +1,6 @@
 import {ThrowDice} from "./components/ThrowDice";
 import {StagePoints} from "./components/StagePoints";
-import {SaveScoreVM} from "./components/SaveScoreVM";
+import {SaveScore} from "./components/SaveScore";
 import {PassTheTurn} from "./components/PassTheTurn";
 import {Rematch} from "./components/Rematch";
 import {usePlayersDataStateContext} from "../InitialGameStore/components/PlayersDataStore";
@@ -8,7 +8,6 @@ import {useStageDataStateContext} from "../InitialGameStore/components/StageData
 import styles from "./ActionBar.module.css";
 
 export function ActionBar() {
-
     const stageDataState = useStageDataStateContext();
     const playersDataState = usePlayersDataStateContext();
 console.log('stageDataState',stageDataState)
@@ -22,7 +21,7 @@ console.log('stageDataState',stageDataState)
     //             return (<>
     //                     <ThrowDice/>
     //                     <StagePoints/>
-    //                     <SaveScoreVM/>
+    //                     <SaveScore/>
     //                 </>
     //             )
     //         case "pass":
@@ -50,10 +49,10 @@ console.log('stageDataState',stageDataState)
                                     playersDataState={playersDataState}
                                 />
                                 <StagePoints points={stageDataState.stageDataState.stagePoints}/>
-                                <SaveScoreVM
+                                <SaveScore
                                     points={stageDataState.stageDataState.stagePoints}
                                     setStageDataState={stageDataState.setStageDataState}
-                                    playersDataState={playersDataState}
+                                    contextPlayerData={playersDataState}
                                 />
                             </>
                         )

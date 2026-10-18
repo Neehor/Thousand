@@ -26,15 +26,33 @@ export function ThrowDice(props) {
     const {stageDataState, playersDataState} = props;
     const randomDiceCombination = getCombination(getRandomDice(stageDataState.stageDataState.availableDice));
     const checkResultTurn = checkResultTurnFunc(randomDiceCombination.newStagePoints, stageDataState.stageDataState.stagePoints, playersDataState.playersDataState[playersDataState.playersDataState.activePlayer].score, playersDataState.playersDataState[playersDataState.playersDataState.activePlayer].countRedZone)
+    const MAX_AVAILABLE_DICE = 5;
 
+    const getAvailableDice = (prevAvailableDice: number, gameCombinationLength: number) => {
+        const result = prevAvailableDice - gameCombinationLength;
+
+         if(result > 0) {
+             return result
+         } else {
+             return MAX_AVAILABLE_DICE;
+         }
+    }
+
+    const getGameCombination = (prevGameCombination: number[],newGameCombination:number[]) => {
+        if(prevGameCombination.length === MAX_AVAILABLE_DICE) {
+            return newGameCombination;
+        } else {
+            return prevGameCombination.concat(newGameCombination);
+        }
+    }
 
     const getSetRandomDice = () => {
         stageDataState.setStageDataState({
             droppedDice: randomDiceCombination.droppedDice,
-            gameCombination: [...stageDataState.stageDataState.gameCombination,...randomDiceCombination.interimDiceCombination],
+            gameCombination: getGameCombination(stageDataState.stageDataState.gameCombination,randomDiceCombination.interimDiceCombination),
             stagePoints: checkResultTurn.newStagePoints,
             stageState: checkResultTurn.newStageState,
-            availableDice: stageDataState.stageDataState.availableDice - randomDiceCombination.interimDiceCombination.length
+            availableDice: getAvailableDice(stageDataState.stageDataState.availableDice,randomDiceCombination.interimDiceCombination.length)
         });
     }
 
