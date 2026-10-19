@@ -1,10 +1,10 @@
 export function getCombination(interimDiceCombination: Array<number>) {
-    console.log(interimDiceCombination);
-    const droppedDice = [];
-    const interimGameCombination = [];
-    let newStagePoints = 0;
+    // console.log(interimDiceCombination);
+    const droppedDice:number[] = [];
+    const interimGameCombination:number[] = [];
+    let newStagePoints:number = 0;
 
-    function switchEntireTurn(interimDiceCombinationSecond) {
+    function switchEntireTurn(interimDiceCombinationSecond:number[]) {
         function checkDice(checkedDice: number) {
             if (checkedDice > 1){
             let firstCount = 0;

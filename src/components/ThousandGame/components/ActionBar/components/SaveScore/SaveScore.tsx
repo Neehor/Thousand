@@ -29,7 +29,7 @@ export function SaveScore(props: SaveScorePropsType) {
             contextPlayerData.setPlayersDataState(
                 {
                     score: futurePoints,
-                    boundaryPoints: updateBoundaryPoints(futurePoints)
+                    ...updateBoundaryPoints(futurePoints)
                 },
                 {score: inActivePlayer.score - SCORE_DEDUCTION_VALUE},
                 true
@@ -38,7 +38,7 @@ export function SaveScore(props: SaveScorePropsType) {
             contextPlayerData.setPlayersDataState(
                 {
                     score: futurePoints,
-                    boundaryPoints: updateBoundaryPoints(futurePoints)
+                    ...updateBoundaryPoints(futurePoints)
                 },
                 undefined,
                 true

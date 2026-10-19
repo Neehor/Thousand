@@ -11,5 +11,5 @@ export const updateBoundaryPoints = (score: number) => {
         boundaryPoints = SECOND_RED_ZONE.end - score;
     }
 
-    return boundaryPoints;
+    return {boundaryPoints: boundaryPoints,countRedZone: boundaryPoints? 1: 0};
 }

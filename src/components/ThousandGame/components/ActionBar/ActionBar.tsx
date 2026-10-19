@@ -19,16 +19,16 @@ export function ActionBar() {
                     case "start":
                         return (
                             <ThrowDice
-                                stageDataState={stageDataState}
-                                playersDataState={playersDataState}
+                                contextStageData={stageDataState}
+                                contextPlayerData={playersDataState}
                             />
                         )
                     case "inGame":
                         return (
                             <>
                                 <ThrowDice
-                                    stageDataState={stageDataState}
-                                    playersDataState={playersDataState}
+                                    contextStageData={stageDataState}
+                                    contextPlayerData={playersDataState}
                                 />
                                 <StagePoints points={stageDataState.stageDataState.stagePoints}/>
                                 <SaveScore
@@ -49,7 +49,7 @@ export function ActionBar() {
                         return (
                             <Rematch
                                 setStageDataState={stageDataState.setStageDataState}
-                                playersDataState={playersDataState}
+                                contextPlayerData={playersDataState}
                             />
                         )
                 }
