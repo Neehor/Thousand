@@ -4,7 +4,7 @@ import {START_ZONE} from "../../../../constants.ts";
 
 /* init players context*/
 export const PlayersDataStateContext = createContext<contextPlayerDataType | null>(null);
-const initPlayersDataState: PlayersDataStateType = {
+export const initPlayersDataState: PlayersDataStateType = {
     firstPlayer: {name: "player1", score: 0, boundaryPoints: START_ZONE, countRedZone: 0},
     secondPlayer: {name: "player2", score: 0, boundaryPoints: START_ZONE, countRedZone: 0},
     activePlayer: "firstPlayer"

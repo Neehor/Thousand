@@ -3,20 +3,20 @@ import styles from "./PlayerPanel.module.css";
 import {usePlayersDataStateContext} from "../InitialGameStore/components/PlayersDataStore";
 
 export function PlayerPanel() {
-    const checkContextPlayer = usePlayersDataStateContext();
+    const contextPlayerData = usePlayersDataStateContext();
 
 
     return (
         <section className={`${styles.playerPanel}`}>
             <PlayerCard
-                player={checkContextPlayer.playersDataState.firstPlayer}
-                isActive={checkContextPlayer.playersDataState.activePlayer === "firstPlayer"}
-                setPlayersDataState={checkContextPlayer.setPlayersDataState}
+                player={contextPlayerData.playersDataState.firstPlayer}
+                isActive={contextPlayerData.playersDataState.activePlayer === "firstPlayer"}
+                setPlayersDataState={contextPlayerData.setPlayersDataState}
             />
             <PlayerCard
-                player={checkContextPlayer.playersDataState.secondPlayer}
-                isActive={checkContextPlayer.playersDataState.activePlayer === "secondPlayer"}
-                setPlayersDataState={checkContextPlayer.setPlayersDataState}
+                player={contextPlayerData.playersDataState.secondPlayer}
+                isActive={contextPlayerData.playersDataState.activePlayer === "secondPlayer"}
+                setPlayersDataState={contextPlayerData.setPlayersDataState}
             />
         </section>
     )

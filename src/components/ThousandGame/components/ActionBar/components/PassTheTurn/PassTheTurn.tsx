@@ -7,14 +7,15 @@ import {SCORE_DEDUCTION_VALUE} from "../../../../constants.ts";
 import {updateBoundaryPoints} from "../commons/updateBoundaryPoints.ts";
 
 type PassTheTurnPropsType = {
+    points:number
     setStageDataState: (stageData: StageDataStateType) => void;
     contextPlayerData: contextPlayerDataType;
 }
 
-function checkEndScore (playerData:Player){
+function checkEndScore (playerData:Player,points:number){
     let result = {
         countRedZone:0,
-        score:playerData.score
+        score:playerData.score+points
     }
     if (playerData.countRedZone !== 0){
         if(playerData.countRedZone === 3){
@@ -29,13 +30,13 @@ function checkEndScore (playerData:Player){
 }
 
 export function PassTheTurn(props:PassTheTurnPropsType) {
-    const {setStageDataState, contextPlayerData} = props;
+    const {points,setStageDataState, contextPlayerData} = props;
     const activePlayerData = contextPlayerData.playersDataState[contextPlayerData.playersDataState.activePlayer]
 
 
     return (
         <button onClick={() => {
-            contextPlayerData.setPlayersDataState({...checkEndScore(activePlayerData)},undefined,true);
+            contextPlayerData.setPlayersDataState({...checkEndScore(activePlayerData,points)},undefined,true);
             setStageDataState(initStageDataState);
         }}>
             PassTheTurn

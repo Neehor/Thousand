@@ -32,8 +32,6 @@ export function GameLog() {
 
     return (
         <div>
-            Люблю {checkContextPlayer.playersDataState[checkContextPlayer.playersDataState.activePlayer].name} каждую
-            секунду
             <ul>
                 {gameLogs.map((log,index) => (<li key={index}>{log}</li>)
                 )}
