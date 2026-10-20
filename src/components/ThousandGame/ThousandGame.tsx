@@ -8,13 +8,14 @@ import {CheckValues} from "./components/CheckValues";
 
 export function ThousandGame() {
     return (
-        <InitialGameStore>
-            <PlayerPanel />
-            <GameLog />
-            <RedZoneBar />
-            <GameBoardVM />
-            <ActionBar />
-            <CheckValues />
-        </InitialGameStore>
-    )
+        <div className="thousand">
+            <InitialGameStore>
+                <PlayerPanel/>
+                <GameLog/>
+                <RedZoneBar/>
+                <GameBoardVM/>
+                <ActionBar/>
+                <CheckValues/>
+            </InitialGameStore>
+        </div>)
 }

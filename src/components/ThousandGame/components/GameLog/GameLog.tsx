@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import type {PlayersDataStateType} from "../InitialGameStore/components/PlayersDataStore/types.ts";
 import {usePlayersDataStateContext} from "../InitialGameStore/components/PlayersDataStore";
+import styles from "./GameLog.module.css"
 
 const gameLogs: string[] = []
 
@@ -31,7 +32,7 @@ export function GameLog() {
 
 
     return (
-        <div>
+        <div className={styles.containerLog}>
             <ul>
                 {gameLogs.map((log, index) => (<li key={index}>{log}</li>)
                 )}
