@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import type {PlayersDataStateType} from "../InitialGameStore/components/PlayersDataStore/types.ts";
 import {usePlayersDataStateContext} from "../InitialGameStore/components/PlayersDataStore";
 
-const gameLogs:string[] = []
+const gameLogs: string[] = []
 
 export function GameLog() {
 
@@ -21,8 +21,8 @@ export function GameLog() {
         }
         if (lastTurnInfo[checkedPlayer].boundaryPoints > 0 && checkContextPlayer.playersDataState[checkedPlayer].boundaryPoints > 0 && lastTurnInfo[checkedPlayer].boundaryPoints !== checkContextPlayer.playersDataState[checkedPlayer].boundaryPoints) gameLogs.push(`${lastTurnInfo[checkedPlayer].name} re-entered the Red Zone and needs to roll a ${checkContextPlayer.playersDataState[checkedPlayer].boundaryPoints} to get out`);
         if (lastTurnInfo[checkedPlayer].score === 0 && checkContextPlayer.playersDataState[checkedPlayer].score > 0) gameLogs.push(`${lastTurnInfo[checkedPlayer].name} enter to the game`);
-        if (lastTurnInfo[anotherPlayer].score > checkContextPlayer.playersDataState[anotherPlayer].score) gameLogs.push(`${lastTurnInfo[checkedPlayer].name} was overtaken by ${lastTurnInfo[anotherPlayer].name}, causing them to drop 50 points.`)
-        if (lastTurnInfo[checkedPlayer].score > 0 && checkContextPlayer.playersDataState[checkedPlayer].score === 0){
+        if (lastTurnInfo[anotherPlayer].score > checkContextPlayer.playersDataState[anotherPlayer].score) gameLogs.push(`${lastTurnInfo[checkedPlayer].name} was overtaken by ${lastTurnInfo[anotherPlayer].name}, causing him to drop 50 points.`)
+        if (lastTurnInfo[checkedPlayer].score > 0 && checkContextPlayer.playersDataState[checkedPlayer].score === 0) {
             gameLogs.length = 0;
             gameLogs.push(`Start new game!`)
         }
@@ -33,7 +33,7 @@ export function GameLog() {
     return (
         <div>
             <ul>
-                {gameLogs.map((log,index) => (<li key={index}>{log}</li>)
+                {gameLogs.map((log, index) => (<li key={index}>{log}</li>)
                 )}
             </ul>
         </div>
