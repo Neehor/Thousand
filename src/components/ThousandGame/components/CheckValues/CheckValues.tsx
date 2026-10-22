@@ -39,7 +39,7 @@ export function CheckValues() {
                     <li key={"2321"}> <strong>ActivePlayer:</strong> {checkContextPlayer.playersDataState.activePlayer} </li>
                 </ul>
             </section>
-            <button onClick={() => checkContextPlayer.setPlayersDataState({score:280})} > click </button>
+            <button onClick={() => checkContextPlayer.setPlayersDataState({score:295})} > click </button>
         </div>
     )
 }

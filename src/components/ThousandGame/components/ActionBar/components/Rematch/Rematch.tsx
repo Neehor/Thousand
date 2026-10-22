@@ -2,6 +2,8 @@ import type {StageDataStateType} from "../../../InitialGameStore/components/Stag
 import type {contextPlayerDataType} from "../../../InitialGameStore/components/PlayersDataStore/types.ts";
 import {initStageDataState} from "../../../InitialGameStore/components/StageDataStore/StageDataStore.tsx";
 import {initPlayersDataState} from "../../../InitialGameStore/components/PlayersDataStore/PlayersDataStore.tsx";
+import {useEffect} from "react";
+
 
 type PassTheTurnPropsType = {
     setStageDataState: (stageData: StageDataStateType) => void;
@@ -13,7 +15,9 @@ export function Rematch(props: PassTheTurnPropsType) {
     const activePlayer = contextPlayerData.playersDataState.activePlayer;
     const inactivePlayer = activePlayer !== 'firstPlayer' ? 'firstPlayer' : 'secondPlayer';
     const activePlayerState = activePlayer !== 'firstPlayer';
-
+    useEffect(() => {
+        contextPlayerData.setPlayersDataState({score:1000})
+    },[])
 
     return (
         <button onClick={()=>{

@@ -31,7 +31,10 @@ export function SaveScore(props: SaveScorePropsType) {
                     score: futurePoints,
                     ...updateBoundaryPoints(futurePoints)
                 },
-                {score: inActivePlayer.score - SCORE_DEDUCTION_VALUE},
+                {
+                    score: inActivePlayer.score - SCORE_DEDUCTION_VALUE,
+                    ...updateBoundaryPoints(inActivePlayer.score - SCORE_DEDUCTION_VALUE)
+                },
                 true
             )
         } else {
