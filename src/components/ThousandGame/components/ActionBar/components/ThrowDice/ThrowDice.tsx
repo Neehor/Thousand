@@ -32,7 +32,11 @@ export function ThrowDice(props: ThrowDiceType) {
     // todo: test pass the turn (delete it)
     const {contextStageData, contextPlayerData} = props;
     const randomDiceCombination = getCombination(getRandomDice(contextStageData.stageDataState.availableDice));
-    const checkResultTurn = checkResultTurnFunc(randomDiceCombination.newStagePoints, contextStageData.stageDataState.stagePoints, contextPlayerData.playersDataState[contextPlayerData.playersDataState.activePlayer].score)
+    const checkResultTurn = checkResultTurnFunc(
+        randomDiceCombination.newStagePoints,
+        contextStageData.stageDataState.stagePoints,
+        contextPlayerData.playersDataState[contextPlayerData.playersDataState.activePlayer].score
+    )
     const MAX_AVAILABLE_DICE = 5;
 
     const getAvailableDice = (prevAvailableDice: number, gameCombinationLength: number) => {
