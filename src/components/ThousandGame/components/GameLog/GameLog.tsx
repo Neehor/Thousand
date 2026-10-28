@@ -15,6 +15,8 @@ export function GameLog() {
     useEffect(() => {
         const checkedPlayer = (checkContextPlayer.playersDataState.activePlayer === "firstPlayer") ? "secondPlayer" : "firstPlayer";
         const anotherPlayer = checkContextPlayer.playersDataState.activePlayer;
+
+        if (lastTurnInfo[checkedPlayer].score > checkContextPlayer.playersDataState[checkedPlayer].score && !(lastTurnInfo[anotherPlayer].score > checkContextPlayer.playersDataState[anotherPlayer].score) && !(lastTurnInfo[checkedPlayer].countRedZone === 3 && (checkContextPlayer.playersDataState[checkedPlayer].countRedZone === 1 || checkContextPlayer.playersDataState[checkedPlayer].countRedZone === 0))) gameLogs.push(`${lastTurnInfo[checkedPlayer].name} was rolling over 1000`)
         if (lastTurnInfo[anotherPlayer].score > checkContextPlayer.playersDataState[anotherPlayer].score) gameLogs.push(`${lastTurnInfo[anotherPlayer].name} was overtaken by ${lastTurnInfo[checkedPlayer].name}, causing him to drop 50 points.`)
         if (lastTurnInfo[checkedPlayer].score > checkContextPlayer.playersDataState[checkedPlayer].score) gameLogs.push(`${lastTurnInfo[checkedPlayer].name} fell by 50 points`)
         if (lastTurnInfo[checkedPlayer].countRedZone !== checkContextPlayer.playersDataState[checkedPlayer].countRedZone) {
