@@ -22,7 +22,7 @@ function checkResultTurnFunc(newStagePoints: number, stagePoints: number, score:
     if (futurePoints === 1000) result.newStageState = "win";
     if (futurePoints > 1000) {
         result.newStageState = "pass"
-        result.newStagePoints = -50
+        result.newStagePoints = newStagePoints + stagePoints
 
     }
     return result

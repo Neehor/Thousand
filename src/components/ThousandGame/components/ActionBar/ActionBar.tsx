@@ -40,11 +40,14 @@ export function ActionBar() {
                         )
                     case "pass":
                         return (
-                            <PassTheTurn
-                                points={stageDataState.stageDataState.stagePoints}
-                                setStageDataState={stageDataState.setStageDataState}
-                                contextPlayerData={playersDataState}
-                            />
+                            <>
+                                <PassTheTurn
+                                    points={stageDataState.stageDataState.stagePoints}
+                                    setStageDataState={stageDataState.setStageDataState}
+                                    contextPlayerData={playersDataState}
+                                />
+                                <StagePoints points={stageDataState.stageDataState.stagePoints}/>
+                            </>
                         )
                     case "win":
                         return (

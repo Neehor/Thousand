@@ -15,7 +15,7 @@ type PassTheTurnPropsType = {
 function checkEndScore (playerData:Player,points:number){
     let result = {
         countRedZone:0,
-        score:playerData.score+points
+        score: points? playerData.score - SCORE_DEDUCTION_VALUE : playerData.score
     }
     if (playerData.countRedZone !== 0){
         if(playerData.countRedZone === 3){
