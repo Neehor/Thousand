@@ -5,6 +5,7 @@ import {RedZoneBar} from "./components/RedZoneBar";
 import {PlayerPanel} from "./components/PlayerPanel";
 import {InitialGameStore} from "./components/InitialGameStore";
 import {CheckValues} from "./components/CheckValues";
+import {RulesModal} from "./components/RulesModal";
 
 export function ThousandGame() {
     return (
@@ -13,6 +14,7 @@ export function ThousandGame() {
                 <PlayerPanel/>
                 <GameLog/>
                 <RedZoneBar/>
+                <RulesModal/>
                 <GameBoardVM/>
                 <ActionBar/>
                 <CheckValues/>

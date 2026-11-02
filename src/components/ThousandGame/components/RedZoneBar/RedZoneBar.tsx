@@ -7,10 +7,15 @@ export function RedZoneBar() {
     return (
         <>
             {countRedZone !== 0 && (
+                // <div style={{display: "flex", justifyContent: "center"}}>
+                //     <img src="/pngwing.com.png" style={{opacity: countRedZone > 1 ? 1 : 0.5}} width={40} height={40}/>
+                //     <img src="/pngwing.com.png" style={{opacity: countRedZone > 2 ? 1 : 0.5}} width={40} height={40}/>
+                //     <img src="/pngwing.com.png" style={{opacity: 0.5}} width={40} height={40}/>
+                // </div>
                 <div style={{display: "flex", justifyContent: "center"}}>
-                    <img src="/pngwing.com.png" style={{opacity: countRedZone > 1 ? 1 : 0.5}} width={40} height={40}/>
-                    <img src="/pngwing.com.png" style={{opacity: countRedZone > 2 ? 1 : 0.5}} width={40} height={40}/>
-                    <img src="/pngwing.com.png" style={{opacity: 0.5}} width={40} height={40}/>
+                    <img src="/pngwing.com.png" style={{opacity: countRedZone > 1 ? 0 : 1}} width={40} height={40}/>
+                    <img src="/pngwing.com.png" style={{opacity: countRedZone > 2 ? 0 : 1}} width={40} height={40}/>
+                    <img src="/pngwing.com.png"  width={40} height={40}/>
                 </div>
             )}
         </>
