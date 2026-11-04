@@ -28,7 +28,7 @@ export function Rematch(props: PassTheTurnPropsType) {
                 );
             setStageDataState(initStageDataState)
         }}>
-            Do you want a rematch?
+            START NEW GAME
         </button>
     )
 }

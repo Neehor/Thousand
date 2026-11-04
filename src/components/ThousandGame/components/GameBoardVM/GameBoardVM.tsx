@@ -5,6 +5,7 @@ export function GameBoardVM() {
     const stageDataState = useStageDataStateContext();
     const playersDataState = usePlayersDataStateContext();
 
+
     return (
         <div style={{
             display: "flex",
@@ -14,9 +15,8 @@ export function GameBoardVM() {
             height: "130px"
         }}>
             {stageDataState.stageDataState.stageState === "win" && (
-                <div> {playersDataState.playersDataState[playersDataState.playersDataState.activePlayer].name}
-                    , этот раунд был сложным, но Вы справились
-                    на абсолютно милейшую победную ноту.
+                <div>
+                    It was a great game! The {playersDataState.playersDataState[playersDataState.playersDataState.activePlayer].name} achieved an amazing victory! Do you want a rematch?
                 </div>
             )}
             {(stageDataState.stageDataState.stageState === "pass" || stageDataState.stageDataState.stageState === "inGame")
