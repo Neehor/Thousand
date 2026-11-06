@@ -24,3 +24,22 @@ body {
     border: 1px solid black;
     justify-content: center;
 }
+
+.supportWrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    gap: 35%;
+}
+
+.supportButton {
+    display: flex;
+    gap: 10px;
+}
+
+.redZoneBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

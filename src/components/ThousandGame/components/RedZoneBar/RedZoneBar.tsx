@@ -6,7 +6,7 @@ export function RedZoneBar() {
     const countRedZone = contextPlayerData.playersDataState[contextPlayerData.playersDataState.activePlayer].countRedZone;
 
     return (
-        <>
+        <div className="redZoneBar">
             {countRedZone !== 0 && (
                 // <div style={{display: "flex", justifyContent: "center"}}>
                 //     <img src="/pngwing.com.png" style={{opacity: countRedZone > 1 ? 1 : 0.5}} width={40} height={40}/>
@@ -14,9 +14,6 @@ export function RedZoneBar() {
                 //     <img src="/pngwing.com.png" style={{opacity: 0.5}} width={40} height={40}/>
                 // </div>
                 <div style={{display: "flex", justifyContent: "center"}}>
-                    {/*<img src="/pngwing.com.png" style={{opacity: countRedZone > 1 ? 0 : 1}} width={40} height={40}/>*/}
-                    {/*<img src="/pngwing.com.png" style={{opacity: countRedZone > 2 ? 0 : 1}} width={40} height={40}/>*/}
-                    {/*<img src="/pngwing.com.png"  width={40} height={40}/>*/}
                     {/*<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"*/}
                     {/*     opacity={countRedZone > 1 ? "0" : "1"}>*/}
                     {/*    <path*/}
@@ -39,6 +36,6 @@ export function RedZoneBar() {
                     <IconRedZone opacity={countRedZone > 1 ? "0" : "1"}/>
                 </div>
             )}
-        </>
+        </div>
     )
 }

@@ -13,8 +13,10 @@ export function ThousandGame() {
             <InitialGameStore>
                 <PlayerPanel/>
                 <GameLog/>
-                <RedZoneBar/>
-                <RulesModal/>
+                <div id="supportWrapper" className="supportWrapper">
+                    <RedZoneBar/>
+                    <RulesModal/>
+                </div>
                 <GameBoardVM/>
                 <ActionBar/>
                 <CheckValues/>

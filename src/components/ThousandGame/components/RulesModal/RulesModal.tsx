@@ -9,7 +9,7 @@ export function RulesModal() {
 
 
     return (
-        <>
+        <div id="supportButton" className="supportButton">
             <button onClick={() => setModal(true)} className={styles.imageButton}>
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_353_66)">
@@ -36,7 +36,7 @@ export function RulesModal() {
                 <p><strong>{rules.restrictions.head}</strong></p>
                 <p>{rules.restrictions.text}</p>
             </Modal>
-        </>
+        </div>
     )
 }
 
