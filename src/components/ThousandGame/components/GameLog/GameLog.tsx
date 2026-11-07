@@ -85,12 +85,14 @@ export function GameLog() {
     }, [checkContextPlayer])
 
 
-    return (
-        <div className={styles.containerLog}>
-            <ul>
-                {gameLogs.map((log, index) => (<li key={index}>{log}</li>)
-                )}
-            </ul>
+    return (<div className={styles.gameLog}>
+            <div className={styles.headGamelog}>Game Log</div>
+            <div className={styles.containerLog}>
+                <ul>
+                    {gameLogs.map((log, index) => (<li key={index}>{log}</li>)
+                    )}
+                </ul>
+            </div>
         </div>
     )
 }

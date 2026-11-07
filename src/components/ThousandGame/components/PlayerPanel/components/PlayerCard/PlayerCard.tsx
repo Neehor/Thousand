@@ -34,7 +34,7 @@ export function PlayerCard(props: PlayerCardPropsType) {
                            e.currentTarget.blur()
                        }
                    }}/>
-            <span>Score:{player.score}</span>
+            <span>SCORE:{player.score}</span>
         </article>
     )
 }

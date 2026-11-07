@@ -11,8 +11,10 @@ export function ThousandGame() {
     return (
         <div className="thousand">
             <InitialGameStore>
-                <PlayerPanel/>
-                <GameLog/>
+                <div className="topPanel">
+                    <PlayerPanel/>
+                    <GameLog/>
+                </div>
                 <div id="supportWrapper" className="supportWrapper">
                     <RedZoneBar/>
                     <RulesModal/>

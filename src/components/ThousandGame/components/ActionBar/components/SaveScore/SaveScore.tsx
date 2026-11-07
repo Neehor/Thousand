@@ -58,7 +58,7 @@ export function SaveScore(props: SaveScorePropsType) {
                 setStageDataState(initStageDataState);
             }}
         >
-            Save Score
+            SAVE SCORE
         </button>
     )
 }

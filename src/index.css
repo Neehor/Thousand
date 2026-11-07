@@ -14,15 +14,18 @@ body {
     display: flex;
     min-width: 320px;
     min-height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .thousand {
     display: flex;
     flex-direction: column;
     min-height: 0;
-    min-width: 700px;
+    min-width: 53.75rem;
     border: 1px solid black;
     justify-content: center;
+    padding: 0 50px;
 }
 
 .supportWrapper {
@@ -35,11 +38,16 @@ body {
 
 .supportButton {
     display: flex;
-    gap: 10px;
+    gap: 5px;
 }
 
 .redZoneBar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.topPanel {
+    display: flex;
+    justify-content: space-between;
 }

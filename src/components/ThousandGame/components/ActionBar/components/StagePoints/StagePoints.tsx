@@ -6,7 +6,7 @@ export function StagePoints(props:StagePointsPropsType){
 
     return (
         <span>
-            {points} points
+            {points} POINTS
         </span>
     )
 }

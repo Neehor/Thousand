@@ -39,7 +39,7 @@ export function PassTheTurn(props:PassTheTurnPropsType) {
             contextPlayerData.setPlayersDataState({...checkEndScore(activePlayerData,points)},undefined,true);
             setStageDataState(initStageDataState);
         }}>
-            PassTheTurn
+            PASS THE TURN
         </button>
     )
 }

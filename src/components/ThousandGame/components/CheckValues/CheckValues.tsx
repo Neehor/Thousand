@@ -15,7 +15,7 @@ export function CheckValues() {
     }, []);
 
 
-    return (<>
+    return (<div style={{ marginTop: "8px" }}>
     {element && createPortal(<button onClick={() => setShowToolsSection((prevState)=>!prevState)} className={styles.imageButton}>
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_353_66)">
@@ -65,6 +65,6 @@ export function CheckValues() {
                 </section>
                 <button onClick={() => checkContextPlayer.setPlayersDataState({score: 970})}> click</button>
             </div>}
-        </>
+        </div>
     )
 }
