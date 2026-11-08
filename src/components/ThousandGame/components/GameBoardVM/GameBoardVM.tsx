@@ -11,6 +11,8 @@ export function GameBoardVM() {
         <div style={{
             display: "flex",
             justifyContent: "center",
+            alignItems: 'center',
+            gap:'8px 16px',
             border: '1px solid black',
             height: "130px",
             marginBottom: "10px",
@@ -22,33 +24,28 @@ export function GameBoardVM() {
             )}
             {stageDataState.stageDataState.stageState === "win" && (
                 <div>
-                    It was a great game! The {playersDataState.playersDataState[playersDataState.playersDataState.activePlayer].name} achieved an amazing victory! Do you want a rematch?
+                    It was a great game!
+                    The {playersDataState.playersDataState[playersDataState.playersDataState.activePlayer].name} achieved
+                    an amazing victory! Do you want a rematch?
                 </div>
             )}
             {(stageDataState.stageDataState.stageState === "pass" || stageDataState.stageDataState.stageState === "inGame")
                 && (<>
-                        <div>
+
                             {stageDataState.stageDataState.droppedDice.map((number, index) => (
                                 <img
-                                    src={`/${number}.png`}
-                                    key={index + 25}
-                                    width={120}
-                                    height={120}
+                                    src={`dices/bx-dice-${number}.svg`}
+                                    key={index + 65}
                                     alt={`Dice ${number}`}
                                 />))
                             }
-                        </div>
-                        <div
-                            style={{border: '1px solid black'}}>
                             {stageDataState.stageDataState.gameCombination.map((number, index) => (
                                 <img
-                                    src={`/${number}.png`}
-                                    key={index + 50}
-                                    width={120}
-                                    height={120}
+                                    src={`dices/bx-dice-${number}-win.svg`}
+                                    key={index + 25}
                                     alt={`Dice ${number}`}
-                                />))}
-                        </div>
+                                />))
+                            }
                     </>
                 )}
         </div>
