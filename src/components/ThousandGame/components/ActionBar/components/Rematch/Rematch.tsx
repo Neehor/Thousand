@@ -20,7 +20,7 @@ export function Rematch(props: PassTheTurnPropsType) {
     },[])
 
     return (
-        <button onClick={()=>{
+        <button className="buttons" onClick={()=>{
             contextPlayerData.setPlayersDataState(
                 {...initPlayersDataState[activePlayer],name:contextPlayerData.playersDataState[activePlayer].name},
                 {...initPlayersDataState[inactivePlayer],name:contextPlayerData.playersDataState[inactivePlayer].name},

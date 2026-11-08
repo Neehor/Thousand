@@ -2,11 +2,27 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column-reverse;
+    font-family: 'Itim', cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.05em;
 }
 
 .headGamelog {
     display: flex;
     margin: 0;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Itim', cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: -0.08em;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .gameLog {
@@ -14,4 +30,5 @@
     height: 7.25rem;
     display: flex;
     flex-direction: column;
+    gap: 2px;
 }

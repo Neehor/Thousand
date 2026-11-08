@@ -25,7 +25,8 @@ body {
     min-width: 53.75rem;
     border: 1px solid black;
     justify-content: center;
-    padding: 0 50px;
+    padding: 14px 50px;
+    background: #F1EAE1;
 }
 
 .supportWrapper {
@@ -50,4 +51,27 @@ body {
 .topPanel {
     display: flex;
     justify-content: space-between;
+}
+
+.buttons {
+    width: 118px;
+    height: 35px;
+    border: 1px solid #FFAA00;
+    background: #8C2219;
+    box-shadow: 0 0 0 2px #000000;
+    padding: 8px;
+    gap: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Itim', cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
 }

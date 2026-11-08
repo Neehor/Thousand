@@ -52,6 +52,7 @@ export function SaveScore(props: SaveScorePropsType) {
 
     return (
         <button
+            className="buttons"
             disabled={points < boundaryPointsOfActivePlayer}
             onClick={() => {
                 updatePlayersData();

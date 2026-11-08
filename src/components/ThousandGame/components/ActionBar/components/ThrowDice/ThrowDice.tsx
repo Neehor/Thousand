@@ -68,7 +68,7 @@ export function ThrowDice(props: ThrowDiceType) {
     }
 
     return (
-        <button onClick={getSetRandomDice}>
+        <button className="buttons" onClick={getSetRandomDice}>
             THROW DICE
         </button>
     )

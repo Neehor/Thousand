@@ -35,7 +35,7 @@ export function PassTheTurn(props:PassTheTurnPropsType) {
 
 
     return (
-        <button onClick={() => {
+        <button className="buttons" onClick={() => {
             contextPlayerData.setPlayersDataState({...checkEndScore(activePlayerData,points)},undefined,true);
             setStageDataState(initStageDataState);
         }}>

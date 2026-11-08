@@ -1,5 +1,6 @@
 import {useStageDataStateContext} from "../InitialGameStore/components/StageDataStore";
 import {usePlayersDataStateContext} from "../InitialGameStore/components/PlayersDataStore";
+import styles from "./GameBoardVM.module.css"
 
 export function GameBoardVM() {
     const stageDataState = useStageDataStateContext();
@@ -14,6 +15,11 @@ export function GameBoardVM() {
             height: "130px",
             marginBottom: "10px",
         }}>
+            {stageDataState.stageDataState.stageState === "start" && (
+                <div className={styles.startView}>
+                    Thousand Game
+                </div>
+            )}
             {stageDataState.stageDataState.stageState === "win" && (
                 <div>
                     It was a great game! The {playersDataState.playersDataState[playersDataState.playersDataState.activePlayer].name} achieved an amazing victory! Do you want a rematch?

@@ -5,4 +5,5 @@
     align-items: flex-start;
     justify-content: flex-start;
     width: 26rem;
+    gap: 8px;
 }
