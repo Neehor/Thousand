@@ -1,30 +1,38 @@
 .containerLog {
     overflow-y: auto;
     display: flex;
+    flex: 1;
     flex-direction: column-reverse;
-    line-height: 17px;
-    letter-spacing: -0.05em;
+    scrollbar-width: thin;
 }
 
-.headGamelog {
+
+.title {
     display: flex;
-    margin: 0;
+    margin: 0 0 2px 0;
     align-items: center;
     justify-content: center;
-    font-family: 'Itim', cursive;
-    font-weight: 400;
-    font-style: normal;
     font-size: 18px;
-    line-height: 100%;
+    line-height: 1.22;
     letter-spacing: -0.08em;
     text-align: center;
     text-transform: uppercase;
 }
 
 .gameLog {
-    width: 19.75rem;
-    height: 7.25rem;
+    width: 22rem;
+    height: 8rem;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+}
+
+.list {
+    margin: 0;
+    padding-left: 30px;
+}
+
+.list > li {
+    color: var(--text-color-secondary);
+    line-height: 1.10;
+    margin-bottom: 4px;
 }

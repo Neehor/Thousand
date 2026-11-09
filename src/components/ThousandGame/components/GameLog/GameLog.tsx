@@ -12,13 +12,13 @@ export function GameLog() {
     useEffect(() => {
         const checkedPlayer = (checkContextPlayer.playersDataState.activePlayer === "firstPlayer") ? "secondPlayer" : "firstPlayer";
         const anotherPlayer = checkContextPlayer.playersDataState.activePlayer;
-        const lastTurnCP = checkContextPlayer.playersDataState[checkedPlayer]
-        const previousTurnCP = previousTurnInfo[checkedPlayer]
-        const lastTurnAP = checkContextPlayer.playersDataState[anotherPlayer]
-        const previousTurnAP = previousTurnInfo[anotherPlayer]
+        const lastTurnCP = checkContextPlayer.playersDataState[checkedPlayer];
+        const previousTurnCP = previousTurnInfo[checkedPlayer];
+        const lastTurnAP = checkContextPlayer.playersDataState[anotherPlayer];
+        const previousTurnAP = previousTurnInfo[anotherPlayer];
 
         // Determine why the player lost points. One of the following applies:
-        // The player failed on the final attempt to exit the zone or
+        // The player failed on the final attempt to exit Red zone or
 
         //  1. The player exceeded 1000 points (over the score limit).
         if (previousTurnCP.score > lastTurnCP.score &&
@@ -28,15 +28,27 @@ export function GameLog() {
             gameLogs.push(`${previousTurnCP.name} was rolling over 1000`)
         }
 
+        // message about failed attempts to exit from red zone
+        if(lastTurnCP.score < previousTurnCP.score &&
+            previousTurnCP.countRedZone === 3 ) {
+            gameLogs.push(`${lastTurnCP.name} failed attempts to exit Red zone`);
+        }
+
         // 2. The player was overtaking
         if (previousTurnAP.score > lastTurnAP.score) {
-            gameLogs.push(`${previousTurnAP.name} was overtaken by ${previousTurnCP.name}, causing him to drop 50 points.`)
+            gameLogs.push(`${previousTurnAP.name} was overtaken by ${previousTurnCP.name}`);
         }
 
         if (previousTurnCP.score > lastTurnCP.score) {
             gameLogs.push(`${previousTurnCP.name} fell by 50 points`)
         }
 
+        if (previousTurnAP.score > lastTurnAP.score) {
+            gameLogs.push(`${previousTurnAP.name} fell by 50 points`)
+        }
+
+
+        /* messages about red zones */
         if (previousTurnCP.countRedZone !== lastTurnCP.countRedZone) {
             if (lastTurnCP.countRedZone === 0) {
                 gameLogs.push(`${previousTurnCP.name} left the Red Zone`);
@@ -57,6 +69,8 @@ export function GameLog() {
             }
         }
 
+
+        /* re-entered in red zone */
         if (
             previousTurnCP.boundaryPoints > 0 &&
             lastTurnCP.boundaryPoints > 0 &&
@@ -73,10 +87,13 @@ export function GameLog() {
             gameLogs.push(`${previousTurnAP.name} re-entered the Red Zone and needs to roll a ${lastTurnAP.boundaryPoints} to get out`);
         }
 
+
+        /* messages to enter the game when players get > 65 points */
         if (previousTurnCP.score === 0 && lastTurnCP.score > 0) {
             gameLogs.push(`${previousTurnCP.name} enter to the game`);
         }
 
+        /* message about new game of current players */
         if (previousTurnCP.score > 0 && lastTurnCP.score === 0) {
             gameLogs.length = 0;
             gameLogs.push(`Start new game!`)
@@ -87,9 +104,9 @@ export function GameLog() {
 
     return (
         <div className={styles.gameLog}>
-            <div className={styles.headGamelog}>Game Log</div>
+            <h2 className={styles.title}>Game Log</h2>
             <div className={styles.containerLog}>
-                <ul>
+                <ul className={styles.list}>
                     {gameLogs.map((log, index) => (<li key={index}>{log}</li>))}
                 </ul>
             </div>

@@ -6,6 +6,8 @@
     font-size: 14px;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
+    --text-color-secondary: #4A4A4A;
+    --bg-gameBoard: #F1EAE1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -27,7 +29,7 @@ body {
     border: 1px solid black;
     justify-content: center;
     padding: 14px 50px;
-    background: #F1EAE1;
+    background: var(--bg-gameBoard);
 }
 
 .supportWrapper {
