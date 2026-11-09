@@ -5,17 +5,12 @@
     align-items: center;
     text-align: center;
     width: 83px;
-    height: 37px;
+    height: 35px;
     gap: 8px;
     border-radius: 30px;
     padding: 8px;
     background: white;
     border: 2px solid #F3811D;
-    font-family: 'Itim', cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 14px;
-    line-height: 100%;
     letter-spacing: -0.08em;
     text-transform: uppercase;
 }

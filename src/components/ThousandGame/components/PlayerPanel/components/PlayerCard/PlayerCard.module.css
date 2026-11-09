@@ -1,15 +1,35 @@
 .card {
     display: flex;
-    padding: 0.5rem;
-    border: 1px solid transparent;
-    width: 12.8125rem;
-    gap: 0.5rem;
+    width: 205px;
+    height: 33px;
+    border: 2px solid #919191;
+    border-radius: 50px;
+    padding: 6px 8px;
+    gap: 16px;
 }
 
 .active {
-    border: 1px solid coral;
+    border: 2px solid #F3811D;
+    background: #FFFFFF;
 }
 
 input {
-    width: 6rem;
+    display: flex;
+    align-items: center;
+    width: 97px;
+    height: 17px;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+    color: #000000;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+span {
+    display: flex;
+    align-items: center;
+    line-height: 100%;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
 }

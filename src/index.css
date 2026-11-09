@@ -25,10 +25,10 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 0;
-    min-width: 53.75rem;
+    min-width: 61.43rem;
     border: 1px solid black;
     justify-content: center;
-    padding: 14px 50px;
+    padding: 16px 50px;
     background: var(--bg-gameBoard);
 }
 
@@ -38,6 +38,7 @@ body {
     align-items: center;
     position: relative;
     gap: 35%;
+    margin: 19px 0 4px 0;
 }
 
 .supportButton {
