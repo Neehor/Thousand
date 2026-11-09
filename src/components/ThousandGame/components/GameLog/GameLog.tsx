@@ -6,11 +6,8 @@ import styles from "./GameLog.module.css"
 const gameLogs: string[] = []
 
 export function GameLog() {
-
-    const checkContextPlayer = usePlayersDataStateContext()
-
-
-    const [previousTurnInfo, setPreviousTurnInfo] = useState<PlayersDataStateType>(checkContextPlayer.playersDataState)
+    const checkContextPlayer = usePlayersDataStateContext();
+    const [previousTurnInfo, setPreviousTurnInfo] = useState<PlayersDataStateType>(checkContextPlayer.playersDataState);
 
     useEffect(() => {
         const checkedPlayer = (checkContextPlayer.playersDataState.activePlayer === "firstPlayer") ? "secondPlayer" : "firstPlayer";
@@ -20,15 +17,18 @@ export function GameLog() {
         const lastTurnAP = checkContextPlayer.playersDataState[anotherPlayer]
         const previousTurnAP = previousTurnInfo[anotherPlayer]
 
-        if (
-            previousTurnCP.score > lastTurnCP.score &&
+        // Determine why the player lost points. One of the following applies:
+        // The player failed on the final attempt to exit the zone or
+
+        //  1. The player exceeded 1000 points (over the score limit).
+        if (previousTurnCP.score > lastTurnCP.score &&
             !(previousTurnAP.score > lastTurnAP.score) &&
-            !(previousTurnCP.countRedZone === 3 &&
-                (lastTurnCP.countRedZone === 1 || lastTurnCP.countRedZone === 0))
+            !(previousTurnCP.countRedZone === 3 && (lastTurnCP.countRedZone === 1 || lastTurnCP.countRedZone === 0))
         ) {
             gameLogs.push(`${previousTurnCP.name} was rolling over 1000`)
         }
 
+        // 2. The player was overtaking
         if (previousTurnAP.score > lastTurnAP.score) {
             gameLogs.push(`${previousTurnAP.name} was overtaken by ${previousTurnCP.name}, causing him to drop 50 points.`)
         }
@@ -85,12 +85,12 @@ export function GameLog() {
     }, [checkContextPlayer])
 
 
-    return (<div className={styles.gameLog}>
+    return (
+        <div className={styles.gameLog}>
             <div className={styles.headGamelog}>Game Log</div>
             <div className={styles.containerLog}>
                 <ul>
-                    {gameLogs.map((log, index) => (<li key={index}>{log}</li>)
-                    )}
+                    {gameLogs.map((log, index) => (<li key={index}>{log}</li>))}
                 </ul>
             </div>
         </div>
