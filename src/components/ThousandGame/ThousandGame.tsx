@@ -4,7 +4,7 @@ import {GameLog} from "./components/GameLog";
 import {RedZoneBar} from "./components/RedZoneBar";
 import {PlayerPanel} from "./components/PlayerPanel";
 import {InitialGameStore} from "./components/InitialGameStore";
-import {CheckValues} from "./components/CheckValues";
+import {DevPanel} from "./components/DevPanel";
 import {RulesModal} from "./components/RulesModal";
 
 export function ThousandGame() {
@@ -21,7 +21,7 @@ export function ThousandGame() {
                 </div>
                 <GameBoardVM/>
                 <ActionBar/>
-                <CheckValues/>
+                <DevPanel/>
             </InitialGameStore>
         </div>)
 }

@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import styles from "../RulesModal/RulesModal.module.css";
 import {createPortal} from "react-dom";
 
-export function CheckValues() {
+export function DevPanel() {
     const checkContextStage = useStageDataStateContext();
     const checkContextPlayer = usePlayersDataStateContext();
     const [showToolsSection, setShowToolsSection] = useState<boolean>(false);
