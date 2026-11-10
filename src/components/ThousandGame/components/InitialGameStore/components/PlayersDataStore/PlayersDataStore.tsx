@@ -20,7 +20,7 @@ export function PlayersDataStore({children}: PropsWithChildren) {
             const newState = {...prevState}
             const inActivePlayer = (prevState.activePlayer === "firstPlayer") ? "secondPlayer" : "firstPlayer";
             const activePlayer = prevState.activePlayer
-            console.log(arguments)
+
             if (activePlayerState) {
                 newState[activePlayer] = {
                     ...newState[activePlayer],

@@ -6,22 +6,28 @@ import {PlayerPanel} from "./components/PlayerPanel";
 import {InitialGameStore} from "./components/InitialGameStore";
 import {DevPanel} from "./components/DevPanel";
 import {RulesModal} from "./components/RulesModal";
+import styles from "./ThousandGame.module.css";
+import {useRef} from "react";
 
 export function ThousandGame() {
+    const portalDevLog = useRef(null);
+
     return (
-        <div className="thousand">
+        <div className={styles.thousand}>
             <InitialGameStore>
-                <div className="topPanel">
+                <div className={styles.topPanel}>
                     <PlayerPanel/>
                     <GameLog/>
                 </div>
-                <div id="supportWrapper" className="supportWrapper">
+                <div className={styles.supportWrapper}>
+                    <div ref={portalDevLog}></div>
                     <RedZoneBar/>
                     <RulesModal/>
                 </div>
                 <GameBoardVM/>
                 <ActionBar/>
-                <DevPanel/>
+                <DevPanel element={portalDevLog}/>
             </InitialGameStore>
-        </div>)
+        </div>
+    )
 }

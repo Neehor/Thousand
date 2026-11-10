@@ -1,0 +1,22 @@
+.thousand {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    min-width: 61.43rem;
+    border: 1px solid black;
+    justify-content: center;
+    padding: 16px 50px;
+    background: var(--bg-gameBoard);
+}
+
+.supportWrapper {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin: 19px 0 4px 0;
+}
+
+.topPanel {
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,5 +1,4 @@
 export function getCombination(interimDiceCombination: Array<number>) {
-    // console.log(interimDiceCombination);
     const droppedDice:number[] = [];
     const interimGameCombination:number[] = [];
     let newStagePoints:number = 0;
