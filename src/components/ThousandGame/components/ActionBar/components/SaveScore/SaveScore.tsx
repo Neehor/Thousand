@@ -4,6 +4,7 @@ import {SCORE_DEDUCTION_VALUE} from "../../../../constants";
 import {initStageDataState} from "../../../InitialGameStore/components/StageDataStore/StageDataStore";
 import type {Player} from "../../../InitialGameStore/components/PlayersDataStore/types";
 import {updateBoundaryPoints} from "../commons/updateBoundaryPoints";
+import {GameButton} from "../commons/GameButton";
 
 type SaveScorePropsType = {
     points: number;
@@ -49,17 +50,17 @@ export function SaveScore(props: SaveScorePropsType) {
         }
     }
 
+    const onClickHandler = () => {
+        updatePlayersData();
+        setStageDataState(initStageDataState);
+    }
+
 
     return (
-        <button
-            className="buttons"
+        <GameButton
+            title={"SAVE SCORE"}
+            onClick={onClickHandler}
             disabled={points < boundaryPointsOfActivePlayer}
-            onClick={() => {
-                updatePlayersData();
-                setStageDataState(initStageDataState);
-            }}
-        >
-            SAVE SCORE
-        </button>
+        />
     )
 }

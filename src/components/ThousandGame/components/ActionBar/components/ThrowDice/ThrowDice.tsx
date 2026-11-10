@@ -2,6 +2,8 @@ import {getCombination} from "./utils/getCombination.ts";
 import {getRandomDice} from "./utils/getRandomDice.ts";
 import type {contextPlayerDataType} from "../../../InitialGameStore/components/PlayersDataStore/types.ts";
 import type {contextStageDataType, StageState} from "../../../InitialGameStore/components/StageDataStore/types.ts";
+import {GameButton} from "../commons/GameButton";
+import {MAX_AVAILABLE_DICE} from "../../../../constants";
 
 type ThrowDiceType = {
     contextStageData: contextStageDataType,
@@ -29,7 +31,6 @@ function checkResultTurnFunc(newStagePoints: number, stagePoints: number, score:
 }
 
 export function ThrowDice(props: ThrowDiceType) {
-    // todo: test pass the turn (delete it)
     const {contextStageData, contextPlayerData} = props;
     const randomDiceCombination = getCombination(getRandomDice(contextStageData.stageDataState.availableDice));
     const checkResultTurn = checkResultTurnFunc(
@@ -37,7 +38,6 @@ export function ThrowDice(props: ThrowDiceType) {
         contextStageData.stageDataState.stagePoints,
         contextPlayerData.playersDataState[contextPlayerData.playersDataState.activePlayer].score
     )
-    const MAX_AVAILABLE_DICE = 5;
 
     const getAvailableDice = (prevAvailableDice: number, gameCombinationLength: number) => {
         const result = prevAvailableDice - gameCombinationLength;
@@ -67,9 +67,11 @@ export function ThrowDice(props: ThrowDiceType) {
         });
     }
 
+
     return (
-        <button className="buttons" onClick={getSetRandomDice}>
-            THROW DICE
-        </button>
+        <GameButton
+            title={"THROW DICE"}
+            onClick={getSetRandomDice}
+        />
     )
 }

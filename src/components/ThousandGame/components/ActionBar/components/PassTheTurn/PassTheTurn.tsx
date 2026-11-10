@@ -5,6 +5,7 @@ import type {
 } from "../../../InitialGameStore/components/PlayersDataStore/types";
 import {SCORE_DEDUCTION_VALUE} from "../../../../constants.ts";
 import {updateBoundaryPoints} from "../commons/updateBoundaryPoints.ts";
+import {GameButton} from "../commons/GameButton";
 
 type PassTheTurnPropsType = {
     points:number
@@ -33,13 +34,15 @@ export function PassTheTurn(props:PassTheTurnPropsType) {
     const {points,setStageDataState, contextPlayerData} = props;
     const activePlayerData = contextPlayerData.playersDataState[contextPlayerData.playersDataState.activePlayer]
 
+    const onClickHandler = () => {
+        contextPlayerData.setPlayersDataState({...checkEndScore(activePlayerData,points)},undefined,true);
+        setStageDataState(initStageDataState);
+    }
 
     return (
-        <button className="buttons" onClick={() => {
-            contextPlayerData.setPlayersDataState({...checkEndScore(activePlayerData,points)},undefined,true);
-            setStageDataState(initStageDataState);
-        }}>
-            PASS THE TURN
-        </button>
+        <GameButton
+            title={'PASS THE TURN'}
+            onClick={onClickHandler}
+        />
     )
 }

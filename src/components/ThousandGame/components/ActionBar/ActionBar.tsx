@@ -10,7 +10,7 @@ import styles from "./ActionBar.module.css";
 export function ActionBar() {
     const stageDataState = useStageDataStateContext();
     const playersDataState = usePlayersDataStateContext();
-    console.log('stageDataState', stageDataState);
+
 
     return (
         <div className={styles.container}>

@@ -10,3 +10,4 @@ export const SECOND_RED_ZONE = {
     start: 595,
     end: 695
 }
+export const MAX_AVAILABLE_DICE = 5;

@@ -3,7 +3,7 @@ import type {contextPlayerDataType} from "../../../InitialGameStore/components/P
 import {initStageDataState} from "../../../InitialGameStore/components/StageDataStore/StageDataStore.tsx";
 import {initPlayersDataState} from "../../../InitialGameStore/components/PlayersDataStore/PlayersDataStore.tsx";
 import {useEffect} from "react";
-
+import {GameButton} from "../commons/GameButton";
 
 type PassTheTurnPropsType = {
     setStageDataState: (stageData: StageDataStateType) => void;
@@ -15,20 +15,25 @@ export function Rematch(props: PassTheTurnPropsType) {
     const activePlayer = contextPlayerData.playersDataState.activePlayer;
     const inactivePlayer = activePlayer !== 'firstPlayer' ? 'firstPlayer' : 'secondPlayer';
     const activePlayerState = activePlayer !== 'firstPlayer';
+
+    const onClickHandler = () => {
+        contextPlayerData.setPlayersDataState(
+            {...initPlayersDataState[activePlayer],name:contextPlayerData.playersDataState[activePlayer].name},
+            {...initPlayersDataState[inactivePlayer],name:contextPlayerData.playersDataState[inactivePlayer].name},
+            activePlayerState
+        );
+        setStageDataState(initStageDataState)
+    }
+
     useEffect(() => {
         contextPlayerData.setPlayersDataState({score:1000})
     },[])
 
+
     return (
-        <button className="buttons" onClick={()=>{
-            contextPlayerData.setPlayersDataState(
-                {...initPlayersDataState[activePlayer],name:contextPlayerData.playersDataState[activePlayer].name},
-                {...initPlayersDataState[inactivePlayer],name:contextPlayerData.playersDataState[inactivePlayer].name},
-                activePlayerState
-                );
-            setStageDataState(initStageDataState)
-        }}>
-            START NEW GAME
-        </button>
+        <GameButton
+            title={'START NEW GAME'}
+            onClick={onClickHandler}
+        />
     )
 }
