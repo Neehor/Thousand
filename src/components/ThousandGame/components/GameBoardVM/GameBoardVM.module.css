@@ -9,17 +9,17 @@
     line-height: 100%;
     letter-spacing: -0.08em;
     text-transform: uppercase;
-    opacity: 0.5;
+    color: var(--inactive-game-color);
 }
 
 .gameDesk {
     height: 144px;
-    border: 14px solid #62451E;
+    border: 14px solid var(--border-gameBoard);
     border-radius: 16px;
     padding: 8px 24px;
     display: flex;
     gap: 8px 16px;
-    background: #FED09C;
+    background: var(--bg-gameBoard);
     justify-content: center;
     align-items: center;
     margin-bottom: 12px

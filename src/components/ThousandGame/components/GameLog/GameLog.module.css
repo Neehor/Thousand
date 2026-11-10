@@ -4,6 +4,7 @@
     flex: 1;
     flex-direction: column-reverse;
     scrollbar-width: thin;
+    border: 2px solid var(--inactive-game-color);
 }
 
 

@@ -8,17 +8,7 @@ export function GameBoardVM() {
 
 
     return (
-        <div className={styles.gameDesk}
-        //      style={{
-        //     display: "flex",
-        //     justifyContent: "center",
-        //     alignItems: 'center',
-        //     gap:'8px 16px',
-        //     border: '1px solid black',
-        //     height: "130px",
-        //     marginBottom: "10px",
-        // }}
-        >
+        <div className={styles.gameDesk}>
             {stageDataState.stageDataState.stageState === "start" && (
                 <div className={styles.startView}>
                     Thousand Game

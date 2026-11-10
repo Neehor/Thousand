@@ -7,13 +7,23 @@
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     --text-color-secondary: #4A4A4A;
-    --bg-gameBoard: #F1EAE1;
+    --bg-game: #F1EAE1;
+    --bg-gameBoard: #FED09C;
+    --border-gameBoard: rgba(98, 69, 30, 1);
+    --inactive-game-color: rgba(98, 69, 30, 0.5);
     --button-border-color: #FFAA00;
     --button-bg-color: #8C2219;
     --shadow-color: #000000;
     --button-text-color: #FFFFFF;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+*:not(input) {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 body {

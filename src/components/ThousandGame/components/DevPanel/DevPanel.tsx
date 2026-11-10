@@ -1,6 +1,6 @@
 import {usePlayersDataStateContext} from "../InitialGameStore/components/PlayersDataStore";
 import {useStageDataStateContext} from "../InitialGameStore/components/StageDataStore";
-import { type Ref, useLayoutEffect, useState} from "react";
+import {useLayoutEffect, useState} from "react";
 import styles from "../RulesModal/RulesModal.module.css";
 import {createPortal} from "react-dom";
 
@@ -20,6 +20,7 @@ const svgIconDevLog = <svg width="22" height="22" viewBox="0 0 22 22" fill="none
         fill="#333333"/>
 </svg>
 
+// @ts-ignore
 export function DevPanel(props) {
     const {element} = props;
     const checkContextStage = useStageDataStateContext();
