@@ -27,6 +27,7 @@ export function PlayerCard(props: PlayerCardPropsType) {
         <article className={`${styles.card} ${isActive ? styles.active : ''}`}>
             <input value={inputValue}
                    readOnly={!isActive}
+                   maxLength={20}
                    onChange={(e) => setInputValue(e.target.value)}
                    onBlur={onBlurHandler}
                    onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -34,7 +35,7 @@ export function PlayerCard(props: PlayerCardPropsType) {
                            e.currentTarget.blur()
                        }
                    }}/>
-            <span>SCORE:{player.score}</span>
+            <span>SCORE: {player.score}</span>
         </article>
     )
 }
