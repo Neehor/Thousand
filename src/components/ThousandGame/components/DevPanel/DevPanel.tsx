@@ -77,14 +77,12 @@ export function DevPanel(props) {
                         </li>
                     </ul>
                 </section>
-                <section className={styles.imageSection}>
+                <section className={styles.buttonSection}>
                     <button
-                        style={{height: "75px", width: "75px"}}
                         onClick={() => checkContextPlayer.setPlayersDataState({score: 295, boundaryPoints: 0})}
                     > Go to red zone
                     </button>
                     <button
-                        style={{height: "75px", width: "75px"}}
                         onClick={() => checkContextPlayer.setPlayersDataState({score: 975, boundaryPoints: 0})}
                     > Go to end of the game
                     </button>

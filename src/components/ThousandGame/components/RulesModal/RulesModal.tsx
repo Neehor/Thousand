@@ -28,12 +28,12 @@ export function RulesModal() {
                 isOpen={modal}
                 onClose={() => setModal(false)}
             >
-                <p><strong>{rules.goal.head}</strong>{rules.goal.text}</p>
-                <p><strong>{rules.combiScore.head}</strong></p>
+                <p><b>{rules.goal.head}</b>{rules.goal.text}</p>
+                <p><b>{rules.combiScore.head}</b></p>
                 <p>{rules.combiScore.text}</p>
-                <p><strong>{rules.gamePlay.head}</strong></p>
+                <p><b>{rules.gamePlay.head}</b></p>
                 <p>{rules.gamePlay.text}</p>
-                <p><strong>{rules.restrictions.head}</strong></p>
+                <p><b>{rules.restrictions.head}</b></p>
                 <p>{rules.restrictions.text}</p>
             </Modal>
         </>

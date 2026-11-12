@@ -15,6 +15,7 @@
     --button-bg-color: #8C2219;
     --shadow-color: #000000;
     --button-text-color: #FFFFFF;
+    --modal-background: rgba(0, 0, 0, 0.5);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

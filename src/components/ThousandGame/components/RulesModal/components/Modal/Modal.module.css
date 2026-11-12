@@ -1,25 +1,41 @@
 .modalOverlay {
     position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background: rgba(0, 0, 0, 0.5);
-
+    inset: 0;
+    background: var(--modal-background);
     display: flex;
     justify-content: center;
     align-items: center;
-
     z-index: 1000;
 }
 
 .modalContent {
+    position: relative;
+    width: 700px;
+    max-width: 90%;
+    max-height: 95vh;
+    overflow-y: auto;
+    margin-top: 10px;
     background: white;
+    border-radius: 8px;
     padding: 20px;
-    border-radius: 10px;
-    white-space: pre-line;
-    min-width: 300px;
-    min-height: 150px;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background: transparent;
+    font-size: 18px;
+}
+
+.closeButton:hover {
+    background: #ddd;
 }

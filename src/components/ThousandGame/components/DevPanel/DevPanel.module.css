@@ -6,6 +6,10 @@
     outline: none;
 }
 
+header {
+    display: flex;
+}
+
 .containerPanel {
     display: flex;
     flex-direction: column;
@@ -16,19 +20,28 @@
     margin-top: 8px
 }
 
-.containerPanel section{
+.containerPanel header {
+    font-weight: 800;
+}
+
+.containerPanel section {
     border: 1px solid black;
     padding: 16px;
     margin-right: 8px;
 }
 
-.containerPanel section:nth-last-child(2){
-width: 245px;
+.containerPanel section:nth-last-child(2) {
+    width: 245px;
 }
 
-.imageSection {
+.buttonSection {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+}
+
+.buttonSection button {
+    height: 75px;
+    width: 75px;
 }
