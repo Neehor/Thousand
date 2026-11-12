@@ -1,7 +1,7 @@
 import {usePlayersDataStateContext} from "../InitialGameStore/components/PlayersDataStore";
 import {useStageDataStateContext} from "../InitialGameStore/components/StageDataStore";
 import {useLayoutEffect, useState} from "react";
-import styles from "../RulesModal/RulesModal.module.css";
+import styles from "./DevPanel.module.css";
 import {createPortal} from "react-dom";
 
 
@@ -30,10 +30,10 @@ export function DevPanel(props) {
 
     useLayoutEffect(() => {
         setElementPortal(element.current)
-    },[])
+    }, [])
 
     return (
-        <div style={{marginTop: "8px"}}>
+        <div className={styles.containerPanel}>
             {elementPortal && createPortal(
                 <button
                     onClick={() => setShowToolsSection((prevState) => !prevState)}
@@ -77,9 +77,18 @@ export function DevPanel(props) {
                         </li>
                     </ul>
                 </section>
-                <button
-                    onClick={() => checkContextPlayer.setPlayersDataState({score: 295,boundaryPoints:0})}
-                > Go to red zone</button>
+                <section className={styles.imageSection}>
+                    <button
+                        style={{height: "75px", width: "75px"}}
+                        onClick={() => checkContextPlayer.setPlayersDataState({score: 295, boundaryPoints: 0})}
+                    > Go to red zone
+                    </button>
+                    <button
+                        style={{height: "75px", width: "75px"}}
+                        onClick={() => checkContextPlayer.setPlayersDataState({score: 975, boundaryPoints: 0})}
+                    > Go to end of the game
+                    </button>
+                </section>
             </div>}
         </div>
     )
