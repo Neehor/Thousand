@@ -27,14 +27,14 @@ export function GameBoardVM() {
                             {stageDataState.stageDataState.droppedDice.map((number, index) => (
                                 <img
                                     src={`dices/bx-dice-${number}.svg`}
-                                    key={index + 65}
+                                    key={index + 210}
                                     alt={`Dice ${number}`}
                                 />))
                             }
                             {stageDataState.stageDataState.gameCombination.map((number, index) => (
                                 <img
                                     src={`dices/bx-dice-${number}-win.svg`}
-                                    key={index + 25}
+                                    key={index + 105}
                                     alt={`Dice ${number}`}
                                 />))
                             }

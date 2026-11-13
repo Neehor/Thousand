@@ -10,8 +10,8 @@ export function RedZoneBar() {
             {countRedZone !== 0 && (
                 <div style={{display: "flex", justifyContent: "center"}}>
                     <IconRedZone />
-                    <IconRedZone opacity={countRedZone > 2 ? "0" : "1"}/>
-                    <IconRedZone opacity={countRedZone > 1 ? "0" : "1"}/>
+                    <IconRedZone showDice={!(countRedZone > 2)}/>
+                    <IconRedZone showDice={!(countRedZone > 1)}/>
                 </div>
             )}
         </div>

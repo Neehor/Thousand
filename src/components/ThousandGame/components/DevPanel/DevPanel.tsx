@@ -49,7 +49,7 @@ export function DevPanel(props) {
                     <ul>
                         {Object.entries(checkContextPlayer.playersDataState.firstPlayer).map(([key, value]) => (
                             <li key={key}>
-                                <strong>{key}:</strong> {String(value)}
+                                <strong>{key}:</strong> {String(value).length > 8 ? `${String(value).slice(0, 8)}...` : String(value)}
                             </li>
                         ))}
                     </ul>
@@ -59,7 +59,7 @@ export function DevPanel(props) {
                     <ul>
                         {Object.entries(checkContextPlayer.playersDataState.secondPlayer).map(([key, value]) => (
                             <li key={key}>
-                                <strong>{key}:</strong> {String(value)}
+                                <strong>{key}:</strong> {String(value).length > 8 ? `${String(value).slice(0, 8)}...` : String(value)}
                             </li>
                         ))}
                     </ul>
