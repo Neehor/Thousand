@@ -3,9 +3,11 @@ import styles from "./RulesModal.module.css"
 import {Modal} from "./components/Modal";
 import {rules} from "./rules.ts";
 
+type Language = "en" | "ru";
 
 export function RulesModal() {
     const [modal, setModal] = useState(false);
+    const [languageRules, setLanguageRules] = useState<Language>("en");
 
 
     return (
@@ -13,9 +15,15 @@ export function RulesModal() {
             <button onClick={() => setModal(true)} className={styles.imageButton}>
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_353_66)">
-                        <path d="M11.0007 20.1663C13.5319 20.1663 15.8236 19.1403 17.4824 17.4815C19.1413 15.8226 20.1673 13.531 20.1673 10.9997C20.1673 8.46839 19.1413 6.17672 17.4824 4.51786C15.8236 2.85902 13.5319 1.83301 11.0007 1.83301C8.46937 1.83301 6.1777 2.85902 4.51884 4.51786C2.86 6.17672 1.83398 8.46839 1.83398 10.9997C1.83398 13.531 2.86 15.8226 4.51884 17.4815C6.1777 19.1403 8.46937 20.1663 11.0007 20.1663Z" fill="white" stroke-width="2" stroke-linejoin="round" stroke="#333333"/>
-                        <path d="M11 13.1195V11.2861C12.5188 11.2861 13.75 10.0549 13.75 8.53613C13.75 7.01735 12.5188 5.78613 11 5.78613C9.48122 5.78613 8.25 7.01735 8.25 8.53613" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#333333"/>
-                        <path d="M10.9993 17.2448C11.6322 17.2448 12.1452 16.7318 12.1452 16.099C12.1452 15.4661 11.6322 14.9531 10.9993 14.9531C10.3665 14.9531 9.85352 15.4661 9.85352 16.099C9.85352 16.7318 10.3665 17.2448 10.9993 17.2448Z" fill-rule="evenodd" clip-rule="evenodd" fill="#333333"/>
+                        <path
+                            d="M11.0007 20.1663C13.5319 20.1663 15.8236 19.1403 17.4824 17.4815C19.1413 15.8226 20.1673 13.531 20.1673 10.9997C20.1673 8.46839 19.1413 6.17672 17.4824 4.51786C15.8236 2.85902 13.5319 1.83301 11.0007 1.83301C8.46937 1.83301 6.1777 2.85902 4.51884 4.51786C2.86 6.17672 1.83398 8.46839 1.83398 10.9997C1.83398 13.531 2.86 15.8226 4.51884 17.4815C6.1777 19.1403 8.46937 20.1663 11.0007 20.1663Z"
+                            fill="white" stroke-width="2" stroke-linejoin="round" stroke="#333333"/>
+                        <path
+                            d="M11 13.1195V11.2861C12.5188 11.2861 13.75 10.0549 13.75 8.53613C13.75 7.01735 12.5188 5.78613 11 5.78613C9.48122 5.78613 8.25 7.01735 8.25 8.53613"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#333333"/>
+                        <path
+                            d="M10.9993 17.2448C11.6322 17.2448 12.1452 16.7318 12.1452 16.099C12.1452 15.4661 11.6322 14.9531 10.9993 14.9531C10.3665 14.9531 9.85352 15.4661 9.85352 16.099C9.85352 16.7318 10.3665 17.2448 10.9993 17.2448Z"
+                            fill-rule="evenodd" clip-rule="evenodd" fill="#333333"/>
                     </g>
                     <defs>
                         <clipPath id="clip0_353_66">
@@ -27,14 +35,16 @@ export function RulesModal() {
             <Modal
                 isOpen={modal}
                 onClose={() => setModal(false)}
+                changeLanguage={() => setLanguageRules((prevState) => prevState === "en" ? "ru" : "en")}
+                languageRules={languageRules}
             >
-                <p><b>{rules.goal.head}</b>{rules.goal.text}</p>
-                <p><b>{rules.combiScore.head}</b></p>
-                <p>{rules.combiScore.text}</p>
-                <p><b>{rules.gamePlay.head}</b></p>
-                <p>{rules.gamePlay.text}</p>
-                <p><b>{rules.restrictions.head}</b></p>
-                <p>{rules.restrictions.text}</p>
+                <p><b>{rules[languageRules].goal.head}</b>{rules[languageRules].goal.text}</p>
+                <p><b>{rules[languageRules].combiScore.head}</b></p>
+                <p>{rules[languageRules].combiScore.text}</p>
+                <p><b>{rules[languageRules].gamePlay.head}</b></p>
+                <p>{rules[languageRules].gamePlay.text}</p>
+                <p><b>{rules[languageRules].restrictions.head}</b></p>
+                <p>{rules[languageRules].restrictions.text}</p>
             </Modal>
         </>
     )
