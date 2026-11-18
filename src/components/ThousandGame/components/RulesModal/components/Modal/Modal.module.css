@@ -19,6 +19,7 @@
     border-radius: 8px;
     padding: 20px;
     white-space: pre-line;
+    font-family: Arial, sans-serif;
 }
 
 .modalContent button{

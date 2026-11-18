@@ -4,11 +4,11 @@ type ModalProps = {
     isOpen: boolean;
     onClose: () => void;
     changeLanguage: () => void;
-    languageRules:string;
+    languageRules: string;
     children: React.ReactNode;
 };
 
-export function Modal({isOpen, onClose,changeLanguage,languageRules, children}: ModalProps) {
+export function Modal({isOpen, onClose, changeLanguage, languageRules, children}: ModalProps) {
     if (!isOpen) return null;
 
     return (
@@ -17,18 +17,18 @@ export function Modal({isOpen, onClose,changeLanguage,languageRules, children}: 
                 className={styles.modalContent}
                 onClick={(e) => e.stopPropagation()}
             >
-                <strong>{languageRules === "en"?"Game Rules":"Правила Игры"}:</strong>
+                <strong>{languageRules === "en" ? "Game Rules" : "Правила Игры"}:</strong>
                 <button
                     className={styles.closeButton}
                     onClick={onClose}
-                                    >
+                >
                     X
                 </button>
                 <button
                     className={styles.changeLanguage}
                     onClick={changeLanguage}
                 >
-                    {languageRules=== "en" ? "ru" : "en"}
+                    {languageRules === "en" ? "ru" : "en"}
                 </button>
                 {children}
             </div>
