@@ -29,6 +29,12 @@
     -ms-user-select: none;
 }
 
+html {
+    background-image: url("../public/winter_background_dark_high_quality.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 body {
     margin: 0;
     display: flex;
