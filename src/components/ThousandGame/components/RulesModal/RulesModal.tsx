@@ -40,17 +40,16 @@ export function RulesModal() {
                 languageRules={languageRules}
             >
                 <h3>{rules[languageRules].goal.head}</h3>
-                <p> {rules[languageRules].goal.text}</p>
+                <p dangerouslySetInnerHTML={{__html: rules[languageRules].goal.text}}/>
 
                 <h3>{rules[languageRules].comboScore.head}</h3>
-                <p dangerouslySetInnerHTML={{ __html: rules[languageRules].comboScore.text }}>
-                </p>
+                <p dangerouslySetInnerHTML={{__html: rules[languageRules].comboScore.text}}/>
 
                 <h3>{rules[languageRules].gamePlay.head}</h3>
-                <p>{rules[languageRules].gamePlay.text}</p>
+                <p dangerouslySetInnerHTML={{__html: rules[languageRules].gamePlay.text}}/>
 
                 <h3>{rules[languageRules].restrictions.head}</h3>
-                <p>{rules[languageRules].restrictions.text}</p>
+                <p dangerouslySetInnerHTML={{__html: rules[languageRules].restrictions.text}}/>
             </Modal>
         </>
     )
