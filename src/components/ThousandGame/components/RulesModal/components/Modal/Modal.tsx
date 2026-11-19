@@ -1,6 +1,7 @@
 import styles from "./Modal.module.css"
+import React from "react";
 
-type ModalProps = {
+type ModalPropsType = {
     isOpen: boolean;
     onClose: () => void;
     changeLanguage: () => void;
@@ -8,28 +9,31 @@ type ModalProps = {
     children: React.ReactNode;
 };
 
-export function Modal({isOpen, onClose, changeLanguage, languageRules, children}: ModalProps) {
+export function Modal(props: ModalPropsType) {
+    const {isOpen, onClose, changeLanguage, languageRules, children} = props;
+
     if (!isOpen) return null;
 
     return (
-        <div className={styles.modalOverlay} onClick={onClose}>
-            <div
-                className={styles.modalContent}
-                onClick={(e) => e.stopPropagation()}
+        <div className={styles.modalOverlay}
+             onClick={onClose}
+        >
+            <div className={styles.modalContent}
+                 onClick={(e) => e.stopPropagation()}
             >
-                <strong>{languageRules === "en" ? "Game Rules" : "Правила Игры"}:</strong>
-                <button
-                    className={styles.closeButton}
-                    onClick={onClose}
-                >
-                    X
-                </button>
-                <button
-                    className={styles.changeLanguage}
-                    onClick={changeLanguage}
-                >
-                    {languageRules === "en" ? "ru" : "en"}
-                </button>
+                <header className={styles.header}>
+                    <h2>{languageRules === "en" ? "Game Rules" : "Правила Игры"}</h2>
+                    <button className={styles.changeLanguage}
+                            onClick={changeLanguage}
+                    >
+                        {languageRules === "en" ? "ru" : "en"}
+                    </button>
+                    <button className={styles.closeButton}
+                            onClick={onClose}
+                    >
+                        X
+                    </button>
+                </header>
                 {children}
             </div>
         </div>

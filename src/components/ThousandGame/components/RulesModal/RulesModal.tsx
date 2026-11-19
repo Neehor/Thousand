@@ -3,12 +3,13 @@ import styles from "./RulesModal.module.css"
 import {Modal} from "./components/Modal";
 import {rules} from "./rules.ts";
 
-type Language = "en" | "ru";
+type LanguageType = "en" | "ru";
 
 export function RulesModal() {
     const [modal, setModal] = useState(false);
-    const [languageRules, setLanguageRules] = useState<Language>("en");
+    const [languageRules, setLanguageRules] = useState<LanguageType>("en");
 
+    /* todo: apply dangerouslySetInnerHTML to notice hierarchy */
 
     return (
         <>
@@ -38,15 +39,19 @@ export function RulesModal() {
                 changeLanguage={() => setLanguageRules((prevState) => prevState === "en" ? "ru" : "en")}
                 languageRules={languageRules}
             >
-                <p><b>{rules[languageRules].goal.head}</b>{rules[languageRules].goal.text}</p>
-                <p><b>{rules[languageRules].combiScore.head}</b></p>
-                <p>{rules[languageRules].combiScore.text}</p>
-                <p><b>{rules[languageRules].gamePlay.head}</b></p>
+                <h3>{rules[languageRules].goal.head}</h3>
+                <p> {rules[languageRules].goal.text}</p>
+
+                <h3>{rules[languageRules].comboScore.head}</h3>
+                <p dangerouslySetInnerHTML={{ __html: rules[languageRules].comboScore.text }}>
+                </p>
+
+                <h3>{rules[languageRules].gamePlay.head}</h3>
                 <p>{rules[languageRules].gamePlay.text}</p>
-                <p><b>{rules[languageRules].restrictions.head}</b></p>
+
+                <h3>{rules[languageRules].restrictions.head}</h3>
                 <p>{rules[languageRules].restrictions.text}</p>
             </Modal>
         </>
     )
 }
-

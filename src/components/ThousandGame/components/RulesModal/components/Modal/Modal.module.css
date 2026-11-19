@@ -9,42 +9,45 @@
 }
 
 .modalContent {
-    position: relative;
     width: 700px;
     max-width: 90%;
     max-height: 95vh;
     overflow-y: auto;
     margin-top: 10px;
-    background: white;
+    background: var(--field-bg-color);
     border-radius: 8px;
     padding: 20px;
     white-space: pre-line;
-    font-family: Arial, sans-serif;
+    font-family: Inter, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.header h2 {
+    margin: 0;
+    flex: 1;
+    line-height: 1;
 }
 
 .modalContent button{
-    position: absolute;
-    top: 10px;
     width: 30px;
     height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    border: 1px solid #333;
+    border: 2px solid var(--border-system-button);
     border-radius: 4px;
     background: transparent;
     font-size: 18px;
 }
 
-.closeButton {
-    right: 10px;
-}
-
-.changeLanguage {
-    right: 50px;
-}
-
-.closeButton:hover {
-    background: #ddd;
+.modalContent button:hover {
+    background: var(--border-system-button);
+    color: var(--button-text-color);
 }

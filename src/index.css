@@ -10,12 +10,14 @@
     --bg-game: #F1EAE1;
     --bg-gameBoard: #FED09C;
     --border-gameBoard: rgba(98, 69, 30, 1);
+    --border-system-button: #4A4A4A;
     --inactive-game-color: rgba(98, 69, 30, 0.5);
     --button-border-color: #FFAA00;
     --button-bg-color: #8C2219;
     --shadow-color: #000000;
     --button-text-color: #FFFFFF;
     --modal-background: rgba(0, 0, 0, 0.5);
+    --field-bg-color: white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -34,4 +36,12 @@ body {
     min-height: 100vh;
     justify-content: center;
     align-items: center;
+}
+
+h3 {
+    margin: 24px 0 6px 0;
+}
+
+p {
+    margin: 0;
 }

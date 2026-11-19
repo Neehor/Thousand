@@ -2,11 +2,11 @@ export const rules = {
     ru: {
         goal: {
             head: "Цель игры",
-            text: " в кости «Тысяча» — первым набрать ровно 1000 очков, используя 5 игральных кубиков и специальную систему подсчета комбинаций. Игроки бросают кубики по очереди, откладывают очки и продолжают бросок (при выпадении игровой комбинации), пока не решат сохранить очки или пока не выпадет «пустой» ход (при броске кубиков игровой комбинации не случилось)."
+            text: "Первым набрать ровно 1000 очков, используя 5 игральных кубиков и специальную систему подсчета комбинаций. Игроки бросают кубики по очереди, откладывают очки и продолжают бросок (при выпадении игровой комбинации), пока не решат сохранить очки или пока не выпадет «пустой» ход (при броске кубиков игровой комбинации не случилось)."
         },
-        combiScore: {
+        comboScore: {
             head: "Комбинации и очки",
-            text: "Три единицы (туза): 100 очков.\n" +
+            text:"<b>Три единицы:</b> 100 очков.\n" +
                 "Четыре единицы: 400 очков.\n" +
                 "Пять единиц автоматически победа!\n" +
                 "Одиночные кубики: 1 = 10 очков, 5 = 5 очков (остальные цифры по отдельности очков не приносят).\n" +
@@ -32,9 +32,9 @@ export const rules = {
     en: {
         goal: {
             head: "Game Goal",
-            text: " of the game Thousand is to be the first player to score exactly 1000 points using 5 dice and a special combination scoring system. Players take turns rolling the dice, setting aside scoring dice and continuing to roll (when a scoring combination is rolled) until they decide to bank their points or roll a \"bust\" (when no scoring combination is rolled)."
+            text: "To become the first player to score exactly 1000 points using 5 dice and a special combination scoring system. Players take turns rolling the dice, setting aside scoring dice and continuing to roll (when a scoring combination is rolled) until they decide to bank their points or roll a \"bust\" (when no scoring combination is rolled)."
         },
-        combiScore: {
+        comboScore: {
             head: "Combinations and Scoring",
             text: "Three ones (aces): 100 points.\n" +
                 "Four ones: 400 points.\n" +
