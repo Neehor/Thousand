@@ -50,6 +50,10 @@ export function RulesModal() {
 
                 <h3>{rules[languageRules].restrictions.head}</h3>
                 <p dangerouslySetInnerHTML={{__html: rules[languageRules].restrictions.text}}/>
+
+                <h3>{rules[languageRules].diceCombinations.head}</h3>
+                <p dangerouslySetInnerHTML={{__html: rules[languageRules].diceCombinations.text}}/>
+
             </Modal>
         </>
     )

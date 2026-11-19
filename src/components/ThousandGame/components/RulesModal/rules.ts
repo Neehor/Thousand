@@ -27,7 +27,21 @@ export const rules = {
                 "Игрок, набравший больше <b>295 очков</b>, входит в <b>первую красную зону</b>. У него есть три попытки набрать оставшиеся очки до <b>395 очков</b>. Если он не успевает, <b>теряет 50 очков</b>. Так же и для промежутка между <b>595 и 695 очками</b> (<b>вторая красная зона</b>).\n" +
                 "Когда один <b>игрок обгоняет другого</b> по очкам, обогнанный <b>теряет 50 очков</b>.Если у двух игроков одинаковые очки, то обогновшим считается тот, кто первым сохранит очки.\n" +
                 "Выбросив <b>больше 1000</b> игрок сразу <b>теряет 50 очков</b> и передаёт ход."
+        },
+        diceCombinations: {
+            head: "Краткий обзор",
+            text: "<b>Игровые комбинации кубиков:</b>\n" +
+                "• Три одинаковых цифры\n" +
+                "• Четыре одинаковых цифры\n" +
+                "• Пять одинаковых цифр\n" +
+                "• Каждая выпавшая 1\n" +
+                "• Каждая выпавшая 5\n\n" +
+                "<b>Зоны:</b>\n" +
+                "• Стартовая зона: 0–65 очков\n" +
+                "• Первая красная зона: 295–395 очков\n" +
+                "• Вторая красная зона: 595–695 очков"
         }
+
     },
     en: {
         goal: {
@@ -57,6 +71,19 @@ export const rules = {
                 "A player who scores more than <b>295 points</b> enters the <b>first red zone</b>. They have three attempts to reach <b>395 points</b>. If they fail, <b>lose 50 points</b>. The same rule applies to the <b>second red zone</b>, between <b>595</b> and <b>695 points</b>.\n" +
                 "When one <b>player overtakes</b> another in points, the player who was overtaken <b>loses 50 points</b>. If both players have the same score, the player who banks their points first is considered to have overtaken the other.\n" +
                 "If a player scores <b>more than 1000 points</b>, they immediately <b>lose 50 points</b> and pass their turn."
+        },
+        diceCombinations: {
+            head: "Brief Overview",
+            text: "<b>Dice combinations:</b>\n" +
+                "• Three of a kind\n" +
+                "• Four of a kind\n" +
+                "• Five of a kind\n" +
+                "• Each individual 1\n" +
+                "• Each individual 5\n\n" +
+                "<b>Zones:</b>\n" +
+                "• Starting zone: 0–65 points\n" +
+                "• First red zone: 295–395 points\n" +
+                "• Second red zone: 595–695 points"
         }
     }
 }
