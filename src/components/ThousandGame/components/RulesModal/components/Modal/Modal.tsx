@@ -22,13 +22,13 @@ export function Modal(props: ModalPropsType) {
                  onClick={(e) => e.stopPropagation()}
             >
                 <header className={styles.header}>
-                    <h2>{languageRules === "en" ? "Game Rules" : "Правила Игры"}</h2>
-                    <button className={styles.changeLanguage}
+                    <h2>{languageRules === "eu" ? "Game Rules" : "Правила Игры"}</h2>
+                    <button className={styles.modalButton}
                             onClick={changeLanguage}
                     >
-                        {languageRules === "en" ? "ru" : "en"}
+                        {languageRules === "eu" ? "ru" : "eu"}
                     </button>
-                    <button className={styles.closeButton}
+                    <button className={styles.modalButton}
                             onClick={onClose}
                     >
                         X

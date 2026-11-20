@@ -3,13 +3,31 @@ import styles from "./RulesModal.module.css"
 import {Modal} from "./components/Modal";
 import {rules} from "./rules.ts";
 
-type LanguageType = "en" | "ru";
+type LanguageType = "eu" | "ru";
 
 export function RulesModal() {
     const [modal, setModal] = useState(false);
-    const [languageRules, setLanguageRules] = useState<LanguageType>("en");
+    const [languageRules, setLanguageRules] = useState<LanguageType>("eu");
+    const [showFullRules, setShowFullRules] = useState<boolean>(false);
 
-    /* todo: apply dangerouslySetInnerHTML to notice hierarchy */
+    const getActionText = (lang:LanguageType, isFullRules:boolean) => {
+        if(lang === "ru") {
+            if(isFullRules) {
+                return "Скрыть"
+            } else {
+                return "Показать подробнее"
+            }
+        }
+
+        if(lang === 'eu') {
+            if(isFullRules) {
+                return "Hide"
+            } else {
+                return "Show more"
+            }
+        }
+    }
+
 
     return (
         <>
@@ -36,24 +54,33 @@ export function RulesModal() {
             <Modal
                 isOpen={modal}
                 onClose={() => setModal(false)}
-                changeLanguage={() => setLanguageRules((prevState) => prevState === "en" ? "ru" : "en")}
+                changeLanguage={() => setLanguageRules((prevState) => prevState === "eu" ? "ru" : "eu")}
                 languageRules={languageRules}
             >
                 <h3>{rules[languageRules].goal.head}</h3>
                 <p dangerouslySetInnerHTML={{__html: rules[languageRules].goal.text}}/>
 
-                <h3>{rules[languageRules].comboScore.head}</h3>
-                <p dangerouslySetInnerHTML={{__html: rules[languageRules].comboScore.text}}/>
+                <h3>{rules[languageRules].overview.head}</h3>
+                <p dangerouslySetInnerHTML={{__html: rules[languageRules].overview.text}}/>
 
-                <h3>{rules[languageRules].gamePlay.head}</h3>
-                <p dangerouslySetInnerHTML={{__html: rules[languageRules].gamePlay.text}}/>
+                <button className={styles.showMoreButton}
+                    onClick={() => setShowFullRules(prevState => !prevState)}
+                >
+                    {getActionText(languageRules, showFullRules)}
+                </button>
 
-                <h3>{rules[languageRules].restrictions.head}</h3>
-                <p dangerouslySetInnerHTML={{__html: rules[languageRules].restrictions.text}}/>
+                {showFullRules && (
+                    <>
+                        <h3>{rules[languageRules].comboScore.head}</h3>
+                        <p dangerouslySetInnerHTML={{__html: rules[languageRules].comboScore.text}}/>
 
-                <h3>{rules[languageRules].diceCombinations.head}</h3>
-                <p dangerouslySetInnerHTML={{__html: rules[languageRules].diceCombinations.text}}/>
+                        <h3>{rules[languageRules].gamePlay.head}</h3>
+                        <p dangerouslySetInnerHTML={{__html: rules[languageRules].gamePlay.text}}/>
 
+                        <h3>{rules[languageRules].restrictions.head}</h3>
+                        <p dangerouslySetInnerHTML={{__html: rules[languageRules].restrictions.text}}/>
+                    </>
+                    )}
             </Modal>
         </>
     )

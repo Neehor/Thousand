@@ -12,3 +12,20 @@
     height: auto;
     transition: transform 0.2s;
 }
+
+.showMoreButton {
+    margin-top: 16px;
+    font-size: inherit;
+    display: flex;
+    padding: 4px 8px;
+    cursor: pointer;
+    border: 2px solid var(--border-system-button);
+    border-radius: 4px;
+    background: transparent;
+
+}
+
+.showMoreButton:hover {
+    background: var(--border-system-button);
+    color: var(--button-text-color);
+}

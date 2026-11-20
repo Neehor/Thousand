@@ -34,7 +34,7 @@
     line-height: 1;
 }
 
-.modalContent button{
+.modalButton {
     width: 30px;
     height: 30px;
     display: flex;
@@ -47,7 +47,7 @@
     font-size: 18px;
 }
 
-.modalContent button:hover {
+.modalButton:hover {
     background: var(--border-system-button);
     color: var(--button-text-color);
 }
