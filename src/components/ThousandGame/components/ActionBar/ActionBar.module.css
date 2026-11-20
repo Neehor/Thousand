@@ -2,5 +2,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 64px;
+    gap: 48px;
+}
+
+.passView {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    margin-right:auto ;
+}
+
+.passView :nth-child(1) {
+    margin-left: 191px;
 }

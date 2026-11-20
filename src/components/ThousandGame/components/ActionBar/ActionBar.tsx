@@ -40,14 +40,14 @@ export function ActionBar() {
                         )
                     case "pass":
                         return (
-                            <>
+                            <div className={styles.passView}>
                                 <PassTheTurn
                                     points={stageDataState.stageDataState.stagePoints}
                                     setStageDataState={stageDataState.setStageDataState}
                                     contextPlayerData={playersDataState}
                                 />
                                 <StagePoints points={stageDataState.stageDataState.stagePoints}/>
-                            </>
+                            </div>
                         )
                     case "win":
                         return (
