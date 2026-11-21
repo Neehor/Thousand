@@ -1,0 +1,14 @@
+.stagePoints {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    border-radius: 30px;
+    padding: 8px;
+    background: white;
+    border: 2px solid #F3811D;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+}

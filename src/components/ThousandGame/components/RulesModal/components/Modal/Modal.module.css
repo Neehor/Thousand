@@ -1,0 +1,53 @@
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: var(--modal-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    width: 700px;
+    max-width: 90%;
+    max-height: 95vh;
+    overflow-y: auto;
+    margin-top: 10px;
+    background: var(--field-bg-color);
+    border-radius: 8px;
+    padding: 20px;
+    white-space: pre-line;
+    font-family: Inter, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.header h2 {
+    margin: 0;
+    flex: 1;
+    line-height: 1;
+}
+
+.modalButton {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid var(--border-system-button);
+    border-radius: 4px;
+    background: transparent;
+    font-size: 18px;
+}
+
+.modalButton:hover {
+    background: var(--border-system-button);
+    color: var(--button-text-color);
+}

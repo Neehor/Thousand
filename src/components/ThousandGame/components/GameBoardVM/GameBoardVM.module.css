@@ -1,0 +1,23 @@
+.startView{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 68px;
+    line-height: 100%;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+    color: var(--inactive-game-color);
+}
+
+.gameDesk {
+    height: 144px;
+    border: 14px solid var(--border-gameBoard);
+    border-radius: 16px;
+    padding: 8px 24px;
+    display: flex;
+    gap: 8px 16px;
+    background: var(--bg-gameBoard);
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px
+}

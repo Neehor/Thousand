@@ -1,0 +1,36 @@
+.card {
+    display: flex;
+    width: 205px;
+    height: 33px;
+    border: 2px solid var(--inactive-game-color);
+    border-radius: 50px;
+    padding: 6px 4px 6px 8px;
+    gap: 16px;
+}
+
+.active {
+    border: 2px solid #F3811D;
+    background: #FFFFFF;
+}
+
+input {
+    display: flex;
+    align-items: center;
+    width: 97px;
+    height: 17px;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+    color: #000000;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 0;
+}
+
+span {
+    display: flex;
+    align-items: center;
+    line-height: 100%;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+}
