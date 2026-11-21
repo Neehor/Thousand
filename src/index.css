@@ -1,3 +1,5 @@
+@import 'modern-normalize/modern-normalize.css';
+
 :root {
     font-family: Itim, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-weight: 400;
