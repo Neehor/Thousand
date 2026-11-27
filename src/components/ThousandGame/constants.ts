@@ -1,3 +1,5 @@
+import type {PlayerKey} from "./components/InitialGameStore/components/PlayersDataStore/types.ts";
+
 export const SCORE_DEDUCTION_VALUE = 50;
 
 /* red and start zones values*/
@@ -11,3 +13,5 @@ export const SECOND_RED_ZONE = {
     end: 695
 }
 export const MAX_AVAILABLE_DICE = 5;
+
+export const playersName:PlayerKey[] = ["firstPlayer", "secondPlayer", "thirdPlayer", "fourthPlayer", "fifthPlayer", "sixthPlayer"]
